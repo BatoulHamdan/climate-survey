@@ -9,6 +9,7 @@ body {
 
 .container {
   max-width: 600px;
+  height: 100vh;
   margin: auto;
   padding: 2rem;
   background-color: #f3f4f6;

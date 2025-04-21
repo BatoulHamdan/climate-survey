@@ -11,7 +11,7 @@ import SurveyCompletion from "./Componenets/SurveyCompletion.js";
 import { BsPersonWalking } from "react-icons/bs";
 
 function SurveyGame() {
-  const [language, setLanguage] = useState("English");
+  const [language, setLanguage] = useState("en");
   const [questionsList, setQuestionsList] = useState([]);
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState([]);
@@ -25,8 +25,8 @@ function SurveyGame() {
   useEffect(() => {
     const loadQuestions = async () => {
       try {
-        const personalModule = await import(`./PersonalQuestions/${language}.js`);
-        const climateModule = await import(`./ClimateQuestions/${language}.js`);
+        const personalModule = await import(`./Questions/Personal.js`);
+        const climateModule = await import(`./Questions/Climate.js`);
 
         const personalQs = personalModule.default || [];
         const climateQs = climateModule.default || [];
@@ -97,7 +97,7 @@ function SurveyGame() {
     let newQuestionsList = [...questionsList];
   
     // If this is the interest question
-    if (currentQuestion?.question === "Topic(s) of interest") {
+    if (currentQuestion?.question['en'] === "Topic(s) of interest") {
       // Remove previously added interest questions and extra modules
       if (lastInterest) {
         try {
@@ -114,18 +114,11 @@ function SurveyGame() {
       // Add new interest questions (if not Politics or Culture)
       if (selectedAnswer !== "Politics" && selectedAnswer !== "Culture") {
         try {
-          const interestModule = await import(`./${selectedAnswer}Questions/${language}.js`);
+          const interestModule = await import(`./Questions/${selectedAnswer}.js`);
           const interestQuestions = interestModule.default || [];
   
           // Insert new questions after interest question
           newQuestionsList.splice(step + 1, 0, ...interestQuestions);
-  
-          // Load the extra module if the selected topic is Environment
-          if (selectedAnswer === "Environment") {
-            const extraModule = await import(`./ExtraQuestions/Environment/${language}.js`);
-            const extraQuestions = extraModule.default || [];
-            newQuestionsList.splice(step + 1 + interestQuestions.length, 0, ...extraQuestions);
-          }
   
           setLastInterest(selectedAnswer);
         } catch (err) {
@@ -251,6 +244,7 @@ function SurveyGame() {
               step={step}
               total={questionsList.length}
               t={t}
+              language={language}
             />
 
             <ActionButtons

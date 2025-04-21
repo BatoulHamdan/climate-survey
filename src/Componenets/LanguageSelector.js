@@ -9,11 +9,11 @@ const LanguageSelector = ({ language, handleLanguageChange }) => {
         value={language}
         onChange={handleLanguageChange}
       >
-        <option value="English">English</option>
-        <option value="French">Français</option>
-        <option value="Italian">Italiano</option>
-        <option value="Arabic">العربية</option>
-        <option value="Farsi">فارسی</option>
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="it">Italiano</option>
+        <option value="ar">العربية</option>
+        <option value="fa">فارسی</option>
       </select>
     </div>
   );

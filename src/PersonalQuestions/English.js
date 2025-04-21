@@ -50,11 +50,11 @@ const en = [
     //   question: "Job Level",
     //   options: ["Entry Level", "Senior Level", "Management Level", "Executive Management"]
     // },
-    // {
-    //   id: 9,
-    //   question: "Topic(s) of interest",
-    //   options: ["Politics", "History", "Culture", "Economics", "Geography", "HealthNutrition"]
-    // },
+    {
+      id: 9,
+      question: "Topic(s) of interest",
+      options: ["Politics", "History", "Culture", "Economics", "Geography", "HealthNutrition"]
+    },
     // {
     //   id: 10,
     //   question: "Social Media Usage",

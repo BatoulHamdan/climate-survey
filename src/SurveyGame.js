@@ -17,7 +17,9 @@ function SurveyGame() {
   const [answers, setAnswers] = useState([]);
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [surveyCompleted, setSurveyCompleted] = useState(false);
-  const [hasStarted, setHasStarted] = useState(false); // Add state to track if the survey has started
+  const [hasStarted, setHasStarted] = useState(false);
+  const [lastInterest, setLastInterest] = useState(null);
+  const [userCode, setUserCode] = useState(""); 
 
   // Dynamically import language-specific questions
   useEffect(() => {
@@ -25,7 +27,7 @@ function SurveyGame() {
       try {
         const personalModule = await import(`./PersonalQuestions/${language}.js`);
         const climateModule = await import(`./ClimateQuestions/${language}.js`);
-        
+
         const personalQs = personalModule.default || [];
         const climateQs = climateModule.default || [];
   
@@ -66,16 +68,17 @@ function SurveyGame() {
   
       const data = await res.json();
       if (data._id) {
-        localStorage.setItem("userId", data._id);
-        console.log("User ID saved:", data._id); // ✅ Add this
-        setHasStarted(true); // only proceed if ID was saved
+        sessionStorage.setItem("userId", data._id);
+        setUserCode(""); 
+        console.log("User ID saved in session:", data._id);
+        setHasStarted(true);
       } else {
         console.error("Invalid user data:", data);
       }
     } catch (err) {
       console.error("Failed to register user:", err);
     }
-  };    
+  };
 
   const handleBack = () => {
     if (step > 0) {
@@ -87,17 +90,66 @@ function SurveyGame() {
   };
 
   const handleNext = async () => {
+    if (!selectedAnswer) return;
+  
     const updatedAnswers = [...answers];
+    const currentQuestion = questionsList[step];
+    let newQuestionsList = [...questionsList];
+  
+    // If this is the interest question
+    if (currentQuestion?.question === "Topic(s) of interest") {
+      // Remove previously added interest questions and extra modules
+      if (lastInterest) {
+        try {
+          const prevModule = await import(`./${lastInterest}Questions/${language}.js`);
+          const prevQuestions = prevModule.default || [];
+          newQuestionsList = newQuestionsList.filter(
+            (q) => !prevQuestions.some((pq) => pq.question === q.question)
+          );
+        } catch (err) {
+          console.warn(`Failed to clean up previous interest ${lastInterest}`, err);
+        }
+      }
+  
+      // Add new interest questions (if not Politics or Culture)
+      if (selectedAnswer !== "Politics" && selectedAnswer !== "Culture") {
+        try {
+          const interestModule = await import(`./${selectedAnswer}Questions/${language}.js`);
+          const interestQuestions = interestModule.default || [];
+  
+          // Insert new questions after interest question
+          newQuestionsList.splice(step + 1, 0, ...interestQuestions);
+  
+          // Load the extra module if the selected topic is Environment
+          if (selectedAnswer === "Environment") {
+            const extraModule = await import(`./ExtraQuestions/Environment/${language}.js`);
+            const extraQuestions = extraModule.default || [];
+            newQuestionsList.splice(step + 1 + interestQuestions.length, 0, ...extraQuestions);
+          }
+  
+          setLastInterest(selectedAnswer);
+        } catch (err) {
+          console.warn(`No questions found for interest: ${selectedAnswer}`, err);
+          setLastInterest(null);
+        }
+      } else {
+        setLastInterest(null);
+      }
+    }
+  
+    // Save the current answer
     updatedAnswers[step] = selectedAnswer;
     setAnswers(updatedAnswers);
+    setQuestionsList(newQuestionsList);
   
-    if (step === questionsList.length - 1) {
+    // Final step
+    if (step === newQuestionsList.length - 1) {
       setSurveyCompleted(true);
-      const userId = localStorage.getItem("userId");
+      const userId = sessionStorage.getItem("userId");
+      const userCode = sessionStorage.getItem("userCode");
   
-      // Build 0–65 answers with fallback to N/A
       const structuredAnswers = Array.from({ length: 66 }, (_, id) => {
-        const index = questionsList.findIndex(q => q.id === id);
+        const index = newQuestionsList.findIndex(q => q.id === id);
         return {
           questionId: id.toString(),
           answer: index !== -1 && updatedAnswers[index] ? updatedAnswers[index] : "N/A",
@@ -117,15 +169,16 @@ function SurveyGame() {
         });
   
         const result = await response.json();
-        localStorage.setItem("userCode", result.userCode);
+        sessionStorage.setItem("userCode", result.userCode);
+        setUserCode(result.userCode);
       } catch (error) {
         console.error("Error submitting survey:", error);
       }
     } else {
-      setStep(step + 1);
-      setSelectedAnswer(updatedAnswers[step + 1] || "");
+      setStep(prev => prev + 1); // ✅ Move to next question
+      setSelectedAnswer(updatedAnswers[step + 1] || ""); // ✅ Pre-fill if user goes back
     }
-  };  
+  };    
 
   const handleLanguageChange = (e) => {
     const newLang = e.target.value;
@@ -175,7 +228,7 @@ function SurveyGame() {
           </p>
           <button
             onClick={handleStart}
-            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded transition duration-300"
+            className="start-button"
           >
             {t("startButton")} 
           </button>
@@ -246,7 +299,7 @@ function SurveyGame() {
       )}
 
       {/* Show Completion Screen when survey is done */}
-      {surveyCompleted && <SurveyCompletion t={t} />}
+      {surveyCompleted && <SurveyCompletion t={t} userCode={userCode} />}
     </div>
   );
 }

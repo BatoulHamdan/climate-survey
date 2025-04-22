@@ -27,13 +27,8 @@ function SurveyGame() {
     const loadQuestions = async () => {
       try {
         const personalModule = await import(`./Questions/Personal.js`);
-        // const climateModule = await import(`./Questions/Climate.js`);
-
         const personalQs = personalModule.default || [];
-        // const climateQs = climateModule.default || [];
-  
-        // const combined = [...personalQs, ...climateQs];
-  
+
         setQuestionsList(personalQs);
         setStep(0);
         setAnswers([]);
@@ -107,17 +102,48 @@ function SurveyGame() {
     const currentQuestion = questionsList[step];
     let newQuestionsList = [...questionsList];
   
-    const isInterestQuestion = currentQuestion?.question['en'] === "Topic(s) of interest";
+    console.log("Current Question:", currentQuestion?.question?.en);
+    console.log("Selected Answer:", selectedAnswer);
+  
+    if (currentQuestion?.question?.en === "Job Status") {
+      if (selectedAnswer === "Unemployed") {
+        newQuestionsList = newQuestionsList.filter(q => q?.id !== 7 && q?.id !== 8);
+        console.log("Removing 'Job Role' and 'Job Level' from questions list");
+      } else if (selectedAnswer === "Employed") {
+        try {
+          const personalModule = await import("./Questions/Personal.js");  
+          const jobRole = personalModule?.default?.find(q => q?.id === 7);
+          const jobLevel = personalModule?.default?.find(q => q?.id === 8);
+  
+          const jobStatusIndex = newQuestionsList.findIndex(q => q?.question?.en === "Job Status");
+  
+          if (jobStatusIndex !== -1) {
+            if (jobRole && !newQuestionsList.some(q => q?.id === 7)) {
+              newQuestionsList.splice(jobStatusIndex + 1, 0, jobRole);  
+            }
+  
+            if (jobLevel && !newQuestionsList.some(q => q?.id === 8)) {
+              newQuestionsList.splice(jobStatusIndex + 2, 0, jobLevel);  
+            }
+          } else {
+            console.warn("'Job Status' not found in questions list");
+          }
+        } catch (err) {
+          console.error("Failed to load 'Job Role' and 'Job Level' from Personal module", err);
+        }
+      }
+    }
+  
+    const isInterestQuestion = currentQuestion?.question?.en === "Topic(s) of interest";
   
     if (isInterestQuestion) {
-      // Remove previous interest questions
       if (lastInterest && lastInterest.length) {
         for (const interest of lastInterest) {
           try {
             const prevModule = await import(`./Questions/${interest}.js`);
             const prevQuestions = prevModule.default || [];
             newQuestionsList = newQuestionsList.filter(
-              (q) => !prevQuestions.some((pq) => pq.question === q.question)
+              (q) => !prevQuestions.some((pq) => pq?.question === q?.question)
             );
           } catch (err) {
             console.warn(`Failed to remove previous interest ${interest}`, err);
@@ -170,8 +196,7 @@ function SurveyGame() {
     }
   
     // Save the current answer
-    const currentQ = questionsList[step];
-    if (currentQ.multiple && Array.isArray(selectedAnswer)) {
+    if (currentQuestion?.multiple && Array.isArray(selectedAnswer)) {
       updatedAnswers[step] = selectedAnswer.join(" ");
     } else {
       updatedAnswers[step] = selectedAnswer;
@@ -181,12 +206,12 @@ function SurveyGame() {
     setQuestionsList(newQuestionsList);
   
     // Final step
-    if (step === newQuestionsList.length - 1) {
+    if (step >= newQuestionsList.length - 1) {
       setSurveyCompleted(true);
       const userId = sessionStorage.getItem("userId");
   
       const structuredAnswers = Array.from({ length: 98 }, (_, id) => {
-        const index = newQuestionsList.findIndex(q => q.id === id);
+        const index = newQuestionsList.findIndex(q => q?.id === id);
         return {
           questionId: id.toString(),
           answer: index !== -1 && updatedAnswers[index] ? updatedAnswers[index] : "N/A",
@@ -212,9 +237,12 @@ function SurveyGame() {
         console.error("Error submitting survey:", error);
       }
     } else {
-      setStep(prev => prev + 1);
-      const nextQuestion = newQuestionsList[step + 1];
-      setSelectedAnswer(updatedAnswers[step + 1] || (nextQuestion?.multiple ? [] : ""));
+      const nextQuestionId = newQuestionsList[step + 1]?.id;
+      const newStep = newQuestionsList.findIndex(q => q?.id === nextQuestionId);
+  
+      setStep(newStep);
+      const nextQuestion = newQuestionsList[newStep];
+      setSelectedAnswer(updatedAnswers[newStep] || (nextQuestion?.multiple ? [] : ""));
     }
   };  
 

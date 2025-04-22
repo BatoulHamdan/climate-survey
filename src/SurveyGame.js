@@ -164,7 +164,7 @@ function SurveyGame() {
       setSurveyCompleted(true);
       const userId = sessionStorage.getItem("userId");
   
-      const structuredAnswers = Array.from({ length: 66 }, (_, id) => {
+      const structuredAnswers = Array.from({ length: 98 }, (_, id) => {
         const index = newQuestionsList.findIndex(q => q.id === id);
         return {
           questionId: id.toString(),

@@ -206,35 +206,35 @@ function SurveyGame() {
   return (
     <div className="container mx-auto p-4 relative">
       {surveyCompleted && <Confetti />}
-
-      <LanguageSelector language={language} handleLanguageChange={handleLanguageChange} />
+  
       <h2 className="text-2xl font-bold text-center mb-6">
         🎉 {t("title")} 🎉
       </h2>
-
+  
       {!hasStarted && (
         <div className="text-center mt-10">
+          <LanguageSelector language={language} handleLanguageChange={handleLanguageChange} />
+  
           <h3> {t("welcomeMessage")} </h3>
           <p className="text-xl font-medium mb-6">
-            {t("surveyIntro")} 
+            {t("surveyIntro")}
           </p>
           <button
             onClick={handleStart}
             className="start-button"
           >
-            {t("startButton")} 
+            {t("startButton")}
           </button>
         </div>
       )}
-
-      {/* Survey Content if survey has started */}
+  
       {hasStarted && !surveyCompleted && (
         <>
           <div className="flex items-center space-x-4 mb-4">
             <ProgressBar progressPercent={progressPercent} />
             <ClimateAvatar progress={progressPercent} />
           </div>
-
+  
           <div className="mt-4">
             <Question
               question={questionsList[step]}
@@ -245,7 +245,7 @@ function SurveyGame() {
               t={t}
               language={language}
             />
-
+  
             <ActionButtons
               handleBack={handleBack}
               handleNext={handleNext}
@@ -254,7 +254,7 @@ function SurveyGame() {
               selectedAnswer={selectedAnswer}
               t={t}
             />
-
+  
             <AnimatePresence>
               {milestone && (
                 <motion.p
@@ -264,16 +264,16 @@ function SurveyGame() {
                   exit={{ opacity: 0, y: -20 }}
                   className="milestone text-lg text-blue-600 font-semibold mt-4"
                 >
-                  {translations.milestones[Math.round(progressPercent)]?.[language] 
-                    || translations.milestones[Math.round(progressPercent)]?.default 
-                    || milestone?.[language] 
+                  {translations.milestones[Math.round(progressPercent)]?.[language]
+                    || translations.milestones[Math.round(progressPercent)]?.default
+                    || milestone?.[language]
                     || milestone?.default
                   }
                 </motion.p>
               )}
             </AnimatePresence>
           </div>
-
+  
           <div className="progress-container relative mt-6 h-4 bg-gray-200 rounded-full overflow-hidden">
             <div
               className="progress-bar bg-blue-500 h-full transition-all duration-300"
@@ -290,11 +290,10 @@ function SurveyGame() {
           </div>
         </>
       )}
-
-      {/* Show Completion Screen when survey is done */}
+  
       {surveyCompleted && <SurveyCompletion t={t} userCode={userCode} />}
     </div>
-  );
+  );  
 }
 
 export default SurveyGame;

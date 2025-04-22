@@ -7,7 +7,6 @@ function Question({ question, selectedAnswer, onAnswer, step, total, t, language
 
   return (
     <div className="question-container">
-      {/* Render question in selected language */}
       <p className="question text-xl font-medium mb-4">{question.question[language]}</p>
 
       <div className="options space-y-3">
@@ -51,10 +50,6 @@ function Question({ question, selectedAnswer, onAnswer, step, total, t, language
           );
         })}
       </div>
-
-      <p className="text-sm text-gray-500 mb-1">
-        {t("question")} {step + 1} {t("of")} {total}
-      </p>
     </div>
   );
 }

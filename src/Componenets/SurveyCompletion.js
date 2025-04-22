@@ -1,9 +1,9 @@
 import React from "react";
 import Confetti from "react-confetti";
 import { motion } from "framer-motion";
+import { FaInstagram } from "react-icons/fa";
 
 const SurveyCompletion = ({ t, userCode }) => {
-  // Share button functionality
   const handleShare = async () => {
     const message = `${t("thankYou")} 🎉\n${t("uniqueIDNote")}: ${userCode}`;
     try {
@@ -43,12 +43,12 @@ const SurveyCompletion = ({ t, userCode }) => {
 
         <p className="text-md text-gray-600 mt-4">{t("followInstagramNote")}</p>
         <a
-          href="https://www.instagram.com/YOUR_INSTAGRAM_HANDLE"
+          href="https://www.instagram.com/clim8_s?igsh=MW43NG80NnR1aXhvbA%3D%3D&utm_source=qr"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-500 underline block mt-1"
+          className="inline-flex items-center gap-2 text-pink-500 hover:text-pink-600 font-semibold mt-2"
         >
-          @your_instagram_handle
+          <FaInstagram className="text-2xl" />
         </a>
 
         <p className="text-md text-gray-600 mt-4">{t("followUpNote")}</p>

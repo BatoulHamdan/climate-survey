@@ -19,6 +19,7 @@ function SurveyGame() {
   const [surveyCompleted, setSurveyCompleted] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
   const [lastInterest, setLastInterest] = useState(null);
+  const [otherQuestionsAdded, setOtherQuestionsAdded] = useState(false);
   const [userCode, setUserCode] = useState(""); 
 
   // Dynamically import language-specific questions
@@ -82,12 +83,22 @@ function SurveyGame() {
 
   const handleBack = () => {
     if (step > 0) {
-      setStep(step - 1);
-      setSelectedAnswer(answers[step - 1] || "");
+      const previousStep = step - 1;
+      const previousQuestion = questionsList[previousStep];
+      const previousAnswer = answers[previousStep];
+  
+      setStep(previousStep);
+  
+      if (previousQuestion?.multiple) {
+        setSelectedAnswer(previousAnswer ? previousAnswer.split(" ") : []);
+      } else {
+        setSelectedAnswer(previousAnswer || "");
+      }
+  
       setAnswers(answers.slice(0, -1));
       // playSound("/sounds/back.mp3");
     }
-  };
+  };  
 
   const handleNext = async () => {
     if (!selectedAnswer || (Array.isArray(selectedAnswer) && selectedAnswer.length === 0)) return;
@@ -113,10 +124,10 @@ function SurveyGame() {
           }
         }
       }
-    
+  
       const newInterests = Array.isArray(selectedAnswer) ? selectedAnswer : [selectedAnswer];
       const interestQuestionsToInsert = [];
-    
+  
       for (const interest of newInterests) {
         if (interest !== "Politics" && interest !== "Culture") {
           try {
@@ -128,34 +139,44 @@ function SurveyGame() {
           }
         }
       }
-    
-      // Load and insert extra sets
-      const otherQuestions = [];
-      try {
-        const [climate, additional, conspiracies, big5] = await Promise.all([
-          import("./Questions/Climate.js"),
-          import("./Questions/Additional.js"),
-          import("./Questions/Conspiracies.js"),
-          import("./Questions/Big5.js"),
-        ]);
-        otherQuestions.push(...(climate.default || []), ...(additional.default || []), ...(conspiracies.default || []), ...(big5.default || []));
-      } catch (err) {
-        console.warn("Failed to load extra question sets", err);
+  
+      const insertIndex = step + 1;
+  
+      if (!otherQuestionsAdded) {
+        try {
+          const [climate, additional, conspiracies, big5] = await Promise.all([
+            import("./Questions/Climate.js"),
+            import("./Questions/Additional.js"),
+            import("./Questions/Conspiracies.js"),
+            import("./Questions/Big5.js"),
+          ]);
+          const otherQuestions = [
+            ...(climate.default || []),
+            ...(additional.default || []),
+            ...(conspiracies.default || []),
+            ...(big5.default || []),
+          ];
+  
+          newQuestionsList.splice(insertIndex, 0, ...interestQuestionsToInsert, ...otherQuestions);
+          setOtherQuestionsAdded(true);
+        } catch (err) {
+          console.warn("Failed to load extra question sets", err);
+        }
+      } else {
+        newQuestionsList.splice(insertIndex, 0, ...interestQuestionsToInsert);
       }
-    
-      // Insert both interest-based and extra questions after current question
-      newQuestionsList.splice(step + 1, 0, ...interestQuestionsToInsert, ...otherQuestions);
-    
+  
       setLastInterest(newInterests);
-    }    
+    }
   
     // Save the current answer
     const currentQ = questionsList[step];
     if (currentQ.multiple && Array.isArray(selectedAnswer)) {
-      updatedAnswers[step] = selectedAnswer.join(" "); 
+      updatedAnswers[step] = selectedAnswer.join(" ");
     } else {
       updatedAnswers[step] = selectedAnswer;
     }
+  
     setAnswers(updatedAnswers);
     setQuestionsList(newQuestionsList);
   
@@ -192,7 +213,8 @@ function SurveyGame() {
       }
     } else {
       setStep(prev => prev + 1);
-      setSelectedAnswer(updatedAnswers[step + 1] || (Array.isArray(currentQuestion.options[0]?.value) ? [] : ""));
+      const nextQuestion = newQuestionsList[step + 1];
+      setSelectedAnswer(updatedAnswers[step + 1] || (nextQuestion?.multiple ? [] : ""));
     }
   };  
 

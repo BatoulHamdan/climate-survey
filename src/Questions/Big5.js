@@ -154,3 +154,4 @@ const Big5 = [
       }
   ];
   
+export default Big5;

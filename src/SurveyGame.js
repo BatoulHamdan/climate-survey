@@ -133,7 +133,7 @@ function SurveyGame() {
       const otherQuestions = [];
       try {
         const [climate, additional, conspiracies, big5] = await Promise.all([
-          import("./Questions/Climateclimate.js"),
+          import("./Questions/Climate.js"),
           import("./Questions/Additional.js"),
           import("./Questions/Conspiracies.js"),
           import("./Questions/Big5.js"),

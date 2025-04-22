@@ -1,6 +1,6 @@
 const Big5 = [
     {
-      id: 89,
+      id: 88,
       question: {
         en: "I see myself as someone who is reserved.",
         ar: "أرى نفسي كشخص خجول.",
@@ -17,7 +17,7 @@ const Big5 = [
       ]
     },
     {
-      id: 90,
+      id: 89,
       question: {
         en: "I see myself as someone who is generally trusting.",
         ar: "أرى نفسي كشخص يثق بالآخرين بشكل عام.",
@@ -34,7 +34,7 @@ const Big5 = [
       ]
     },
     {
-      id: 91,
+      id: 90,
       question: {
         en: "I see myself as someone who tends to be lazy.",
         ar: "أرى نفسي كشخص يميل إلى الكسل.",
@@ -51,7 +51,7 @@ const Big5 = [
       ]
     },
     {
-      id: 92,
+      id: 91,
       question: {
         en: "I see myself as someone who is relaxed, handles stress well.",
         ar: "أرى نفسي كشخص هادئ ويعالج التوتر جيدًا.",
@@ -68,7 +68,7 @@ const Big5 = [
       ]
     },
     {
-        id: 93,
+        id: 92,
         question: {
           en: "I see myself as someone who has few artistic interests.",
           ar: "أرى نفسي كشخص لديه اهتمام ضئيل بالفن.",
@@ -85,7 +85,7 @@ const Big5 = [
         ]
       },
       {
-        id: 94,
+        id: 93,
         question: {
           en: "I see myself as someone who is outgoing, sociable.",
           ar: "أرى نفسي كشخص اجتماعي ومنفتح.",
@@ -102,7 +102,7 @@ const Big5 = [
         ]
       },
       {
-        id: 95,
+        id: 94,
         question: {
           en: "I see myself as someone who tends to find fault with others.",
           ar: "أرى نفسي كشخص يميل إلى لوم الآخرين.",
@@ -119,7 +119,7 @@ const Big5 = [
         ]
       },
       {
-        id: 96,
+        id: 95,
         question: {
           en: "I see myself as someone who does a thorough job.",
           ar: "أرى نفسي كشخص يؤدي عمله بشكل دقيق.",
@@ -136,7 +136,7 @@ const Big5 = [
         ]
       },
       {
-        id: 97,
+        id: 96,
         question: {
           en: "I see myself as someone who gets nervous easily.",
           ar: "أرى نفسي كشخص يصبح عصبيًا بسهولة.",
@@ -151,7 +151,24 @@ const Big5 = [
           { label: { en: "Agree a little", ar: "أوافق قليلاً", fa: "موافقم قليلاً", fr: "Plutôt d'accord", it: "D'accordo un po'" }, value: "agree_a_little" },
           { label: { en: "Agree strongly", ar: "أوافق بشدة", fa: "موافقم بشدة", fr: "Tout à fait d'accord", it: "Fortemente d'accordo" }, value: "agree_strongly" }
         ]
-      }
+      },
+      {
+        id: 97,
+        question: {
+          en: "I see myself as someone who has an active imagination.",
+          ar: "أرى نفسي كشخص لديه خيال نشط.",
+          fa: "من خود را به عنوان فردی با تخیلی فعال می‌بینم.",
+          fr: "Je me considère comme quelqu'un qui a une imagination active.",
+          it: "Mi vedo come una persona con una fervida immaginazione."
+        },
+        options: [
+          { label: { en: "Disagree strongly", ar: "أختلف بشدة", fa: "کاملاً مخالفم", fr: "Pas du tout d'accord", it: "Fortemente in disaccordo" }, value: "disagree_strongly" },
+          { label: { en: "Disagree a little", ar: "أختلف قليلاً", fa: "کمی مخالفم", fr: "Pas tout à fait d'accord", it: "Non molto d'accordo" }, value: "disagree_a_little" },
+          { label: { en: "Neither agree nor disagree", ar: "لا أوافق ولا أعارض", fa: "نه موافقم نه مخالفم", fr: "Ni d'accord ni pas d'accord", it: "Né d'accordo né in disaccordo" }, value: "neutral" },
+          { label: { en: "Agree a little", ar: "أوافق قليلاً", fa: "کمی موافقم", fr: "Plutôt d'accord", it: "Abbastanza d'accordo" }, value: "agree_a_little" },
+          { label: { en: "Agree strongly", ar: "أوافق بشدة", fa: "کاملاً موافقم", fr: "Tout à fait d'accord", it: "Fortemente d'accordo" }, value: "agree_strongly" }
+        ]
+      }      
   ];
   
 export default Big5;

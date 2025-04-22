@@ -158,12 +158,12 @@ const Climate = [
       {
         id: 35,
         question: {
-          en: "How strongly do you agree or disagree with the following statement: Global warming is affecting the weather in the United States.",
-          ar: "ما مدى موافقتك أو عدم موافقتك مع العبارة التالية: يؤثر الاحتباس الحراري على الطقس في الولايات المتحدة.",
-          fa: "تا چه اندازه با این جمله موافق یا مخالف هستید: گرم شدن زمین بر آب و هوای ایالات متحده تأثیر می‌گذارد.",
-          fr: "Dans quelle mesure êtes-vous d'accord ou non avec l'énoncé suivant : Le réchauffement climatique affecte la météo aux États-Unis.",
-          it: "Quanto sei d'accordo o in disaccordo con la seguente affermazione: Il riscaldamento globale sta influenzando il clima negli Stati Uniti."
-        },
+          en: "How strongly do you agree or disagree with the following statement: Global warming is affecting the weather in your country.",
+          ar: "ما مدى موافقتك أو عدم موافقتك مع العبارة التالية: يؤثر الاحتباس الحراري على الطقس في بلدك.",
+          fa: "تا چه اندازه با این جمله موافق یا مخالف هستید: گرم شدن زمین بر آب و هوای کشور شما تأثیر می‌گذارد.",
+          fr: "Dans quelle mesure êtes-vous d'accord ou non avec l'énoncé suivant : Le réchauffement climatique affecte la météo dans votre pays.",
+          it: "Quanto sei d'accordo o in disaccordo con la seguente affermazione: Il riscaldamento globale sta influenzando il clima nel tuo paese."
+        },        
         options: [
           {
             value: "Strongly agree",
@@ -210,11 +210,11 @@ const Climate = [
       {
         id: 36,
         question: {
-          en: "In your opinion, when will global warming start to harm people in the United States?",
-          ar: "في رأيك، متى سيبدأ الاحتباس الحراري في إيذاء الناس في الولايات المتحدة؟",
-          fa: "به نظر شما، گرم شدن زمین چه زمانی شروع به آسیب رساندن به مردم در ایالات متحده می‌کند؟",
-          fr: "À votre avis, quand le réchauffement climatique commencera-t-il à nuire aux gens aux États-Unis ?",
-          it: "Secondo te, quando il riscaldamento globale inizierà a danneggiare le persone negli Stati Uniti?"
+          en: "In your opinion, when will global warming start to harm people in your country?",
+          ar: "في رأيك، متى سيبدأ الاحتباس الحراري في إيذاء الناس في بلدك؟",
+          fa: "به نظر شما، گرم شدن زمین چه زمانی شروع به آسیب رساندن به مردم در کشور شما می‌کند؟",
+          fr: "À votre avis, quand le réchauffement climatique commencera-t-il à nuire aux gens dans votre pays ?",
+          it: "Secondo te, quando il riscaldamento globale inizierà a danneggiare le persone nel tuo paese?"
         },
         options: [
           {
@@ -468,12 +468,12 @@ const Climate = [
       {
         id: 40,
         question: {
-          en: "How much do you think global warming will harm people in the United States?",
-          ar: "إلى أي مدى تعتقد أن الاحتباس الحراري سيؤذي الناس في الولايات المتحدة؟",
-          fa: "فکر می‌کنید گرم شدن زمین چقدر به مردم ایالات متحده آسیب خواهد رساند؟",
-          fr: "À quel point pensez-vous que le réchauffement climatique nuira aux gens aux États-Unis ?",
-          it: "Quanto pensi che il riscaldamento globale danneggerà le persone negli Stati Uniti?"
-        },
+          en: "How much do you think global warming will harm people in your country?",
+          ar: "إلى أي مدى تعتقد أن الاحتباس الحراري سيؤذي الناس في بلدك؟",
+          fa: "فکر می‌کنید گرم شدن زمین چقدر به مردم کشور شما آسیب خواهد رساند؟",
+          fr: "À quel point pensez-vous que le réchauffement climatique nuira aux gens dans votre pays ?",
+          it: "Quanto pensi che il riscaldamento globale danneggerà le persone nel tuo paese?"
+        },        
         options: [
           {
             value: "A great deal",
@@ -592,11 +592,11 @@ const Climate = [
       {
         id: 42,
         question: {
-          en: "When do you think global warming will start to harm people in the United States?",
-          ar: "متى تعتقد أن الاحتباس الحراري سيبدأ في إيذاء الناس في الولايات المتحدة؟",
-          fa: "فکر می‌کنید گرم شدن زمین چه زمانی شروع به آسیب رساندن به مردم ایالات متحده خواهد کرد؟",
-          fr: "Quand pensez-vous que le réchauffement climatique commencera à nuire aux gens aux États-Unis ?",
-          it: "Quando pensi che il riscaldamento globale inizierà a danneggiare le persone negli Stati Uniti?"
+          en: "When do you think global warming will start to harm people in your country?",
+          ar: "متى تعتقد أن الاحتباس الحراري سيبدأ في إيذاء الناس في بلدك؟",
+          fa: "فکر می‌کنید گرم شدن زمین چه زمانی شروع به آسیب رساندن به مردم کشور شما خواهد کرد؟",
+          fr: "Quand pensez-vous que le réchauffement climatique commencera à nuire aux gens dans votre pays ?",
+          it: "Quando pensi che il riscaldamento globale inizierà a danneggiare le persone nel tuo paese?"
         },
         options: [
           {
@@ -976,11 +976,11 @@ const Climate = [
       {
         id: 49,
         question: {
-          en: "Expand offshore drilling for oil and natural gas off the U.S. coast.",
-          ar: "توسيع الحفر البحري للنفط والغاز الطبيعي قبالة سواحل الولايات المتحدة.",
-          fa: "گسترش حفاری دریایی برای نفت و گاز طبیعی در سواحل ایالات متحده.",
-          fr: "Étendre le forage en mer pour le pétrole et le gaz naturel au large des côtes américaines.",
-          it: "Espandere le trivellazioni offshore per petrolio e gas naturale al largo delle coste degli Stati Uniti."
+          en: "Expand offshore drilling for oil and natural gas off your country's coast.",
+          ar: "توسيع الحفر البحري للنفط والغاز الطبيعي قبالة سواحل بلدك.",
+          fa: "گسترش حفاری دریایی برای نفت و گاز طبیعی در سواحل کشور شما.",
+          fr: "Étendre le forage en mer pour le pétrole et le gaz naturel au large des côtes de votre pays.",
+          it: "Espandere le trivellazioni offshore per petrolio e gas naturale al largo delle coste del tuo paese."
         },
         options: [
           {
@@ -1556,11 +1556,11 @@ const Climate = [
       {
         id: 59,
         question: {
-          en: "Generate renewable energy (solar and wind) on public land in the U.S.",
-          ar: "توليد الطاقة المتجددة (الشمسية والرياح) على الأراضي العامة في الولايات المتحدة.",
-          fa: "تولید انرژی تجدیدپذیر (خورشیدی و بادی) در زمین‌های عمومی ایالات متحده.",
-          fr: "Produire de l’énergie renouvelable (solaire et éolienne) sur les terres publiques aux États-Unis.",
-          it: "Generare energia rinnovabile (solare ed eolica) su terreni pubblici negli Stati Uniti."
+          en: "Generate renewable energy (solar and wind) on public land in your country.",
+          ar: "توليد الطاقة المتجددة (الشمسية والرياح) على الأراضي العامة في بلدك.",
+          fa: "تولید انرژی تجدیدپذیر (خورشیدی و بادی) در زمین‌های عمومی کشور شما.",
+          fr: "Produire de l’énergie renouvelable (solaire et éolienne) sur les terres publiques de votre pays.",
+          it: "Generare energia rinnovabile (solare ed eolica) su terreni pubblici nel tuo paese."
         },
         options: [
           {
@@ -1608,11 +1608,11 @@ const Climate = [
       {
         id: 60,
         question: {
-          en: "Support U.S. economy transition from fossil fuels to 100% clean energy by 2050.",
-          ar: "دعم انتقال الاقتصاد الأمريكي من الوقود الأحفوري إلى طاقة نظيفة بنسبة 100٪ بحلول عام 2050.",
-          fa: "حمایت از گذار اقتصاد آمریکا از سوخت‌های فسیلی به انرژی ۱۰۰٪ پاک تا سال ۲۰۵۰.",
-          fr: "Soutenir la transition de l'économie américaine des combustibles fossiles vers une énergie 100 % propre d'ici 2050.",
-          it: "Sostenere la transizione dell'economia statunitense dai combustibili fossili a un'energia 100% pulita entro il 2050."
+          en: "Support the economy transition from fossil fuels to 100% clean energy by 2050.",
+          ar: "دعم انتقال اقتصاد بلدك من الوقود الأحفوري إلى طاقة نظيفة بنسبة 100٪ بحلول عام 2050.",
+          fa: "حمایت از گذار اقتصاد کشور شما از سوخت‌های فسیلی به انرژی ۱۰۰٪ پاک تا سال ۲۰۵۰.",
+          fr: "Soutenir la transition de l'économie de votre pays des combustibles fossiles vers une énergie 100 % propre d'ici 2050.",
+          it: "Sostenere la transizione dell'economia del tuo paese dai combustibili fossili a un'energia 100% pulita entro il 2050."
         },
         options: [
           {

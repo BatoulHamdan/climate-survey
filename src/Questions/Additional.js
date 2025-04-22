@@ -2,22 +2,6 @@ const Additional = [
     {
       id: 66,
       question: {
-        en: "Social Media Usage",
-        ar: "استخدام وسائل التواصل الاجتماعي",
-        fa: "استفاده از شبکه‌های اجتماعی",
-        fr: "Utilisation des réseaux sociaux",
-        it: "Utilizzo dei social media"
-      },
-      options: [
-        { value: "0-1 hour/day", label: { en: "0-1 hour/day", ar: "0-1 ساعة/يوم", fa: "۰-۱ ساعت/روز", fr: "0-1 heure/jour", it: "0-1 ora/giorno" } },
-        { value: "1-3 hours/day", label: { en: "1-3 hours/day", ar: "1-3 ساعات/يوم", fa: "۱-۳ ساعت/روز", fr: "1-3 heures/jour", it: "1-3 ore/giorno" } },
-        { value: "3-5 hours/day", label: { en: "3-5 hours/day", ar: "3-5 ساعات/يوم", fa: "۳-۵ ساعت/روز", fr: "3-5 heures/jour", it: "3-5 ore/giorno" } },
-        { value: "5+ hours/day", label: { en: "5+ hours/day", ar: "أكثر من 5 ساعات/يوم", fa: "بیش از ۵ ساعت/روز", fr: "Plus de 5 heures/jour", it: "Più di 5 ore/giorno" } }
-      ]
-    },
-    {
-      id: 67,
-      question: {
         en: "How concerned are you that policies to address global warming will increase your cost of living?",
         ar: "ما مدى قلقك من أن تؤدي السياسات لمعالجة الاحتباس الحراري إلى زيادة تكاليف المعيشة؟",
         fa: "چقدر نگران هستید که سیاست‌های مقابله با گرمایش زمین هزینه زندگی شما را افزایش دهد؟",
@@ -33,7 +17,7 @@ const Additional = [
       ]
     },
     {
-      id: 68,
+      id: 67,
       question: {
         en: "How important is it to you that this country leads the world in new technologies and innovation?",
         ar: "ما مدى أهمية أن تكون بلدك رائدة في العالم في التقنيات الجديدة والابتكار؟",
@@ -50,7 +34,7 @@ const Additional = [
       ]
     },
     {
-      id: 69,
+      id: 68,
       question: {
         en: "Do you agree or disagree with the statement: True patriotism means leaving the country better than you found it.",
         ar: "هل توافق أو لا توافق على العبارة: الوطنية الحقيقية تعني ترك البلاد في حال أفضل مما وجدتها؟",
@@ -67,7 +51,7 @@ const Additional = [
       ]
     },
     {
-      id: 70,
+      id: 69,
       question: {
         en: "On social and political issues, where would you place yourself?",
         ar: "في القضايا الاجتماعية والسياسية، أين تضع نفسك؟",
@@ -86,7 +70,7 @@ const Additional = [
       ]
     },
     {
-      id: 71,
+      id: 70,
       question: {
         en: "An ideal society requires some groups to be on top and others to be on the bottom.",
         ar: "المجتمع المثالي يتطلب أن تكون بعض المجموعات في القمة وأخرى في الأسفل.",
@@ -103,7 +87,7 @@ const Additional = [
       ]
     },
     {
-      id: 72,
+      id: 71,
       question: {
         en: "Do you feel optimistic or pessimistic about the future?",
         ar: "هل تشعر بالتفاؤل أم بالتشاؤم بشأن المستقبل؟",
@@ -120,7 +104,7 @@ const Additional = [
       ]
     },
     {
-      id: 73,
+      id: 72,
       question: {
         en: "Do you think the number of immigrants to your country should be increased, reduced, or remain the same?",
         ar: "هل تعتقد أنه يجب زيادة أو تقليل عدد المهاجرين إلى بلدك أو أن يظل كما هو؟",

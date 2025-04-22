@@ -78,7 +78,7 @@ const translations = {
     },
     finishNote: {
       ar: "نأمل أن تساهم في حماية كوكبنا 🌍",
-      default: "We hope yo0u contribute to saving our planet 🌍",
+      default: "We hope you contribute to saving our planet 🌍",
       it: "Speriamo che tu contribuisca a salvare il nostro pianeta 🌍",
       fa: "امیدواریم که به نجات سیاره‌مان کمک کنید 🌍",
       fr: "Nous espérons que vous contribuerez à sauver notre planète 🌍",

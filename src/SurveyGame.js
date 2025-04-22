@@ -102,13 +102,9 @@ function SurveyGame() {
     const currentQuestion = questionsList[step];
     let newQuestionsList = [...questionsList];
   
-    console.log("Current Question:", currentQuestion?.question?.en);
-    console.log("Selected Answer:", selectedAnswer);
-  
     if (currentQuestion?.question?.en === "Job Status") {
       if (selectedAnswer === "Unemployed") {
         newQuestionsList = newQuestionsList.filter(q => q?.id !== 7 && q?.id !== 8);
-        console.log("Removing 'Job Role' and 'Job Level' from questions list");
       } else if (selectedAnswer === "Employed") {
         try {
           const personalModule = await import("./Questions/Personal.js");  

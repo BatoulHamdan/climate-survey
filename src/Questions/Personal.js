@@ -11,7 +11,8 @@ const Personal = [
       options: [
         { value: "Male", label: { en: "Male", ar: "ذكر", fa: "مرد", fr: "Homme", it: "Maschio" } },
         { value: "Female", label: { en: "Female", ar: "أنثى", fa: "زن", fr: "Femme", it: "Femmina" } }
-      ]
+      ],
+      multiple: false,
     },
     // {
     //   id: 1,
@@ -29,7 +30,8 @@ const Personal = [
     //     { value: "Europe", label: { en: "Europe", ar: "أوروبا", fa: "اروپا", fr: "Europe", it: "Europa" } },
     //     { value: "North America", label: { en: "North America", ar: "أمريكا الشمالية", fa: "آمریکای شمالی", fr: "Amérique du Nord", it: "Nord America" } },
     //     { value: "South America", label: { en: "South America", ar: "أمريكا الجنوبية", fa: "آمریکای جنوبی", fr: "Amérique du Sud", it: "Sud America" } }
-    //   ]
+    //   ],
+    //   multiple: false,
     // },
     // {
     //   id: 2,
@@ -47,7 +49,8 @@ const Personal = [
     //     { value: "Europe", label: { en: "Europe", ar: "أوروبا", fa: "اروپا", fr: "Europe", it: "Europa" } },
     //     { value: "North America", label: { en: "North America", ar: "أمريكا الشمالية", fa: "آمریکای شمالی", fr: "Amérique du Nord", it: "Nord America" } },
     //     { value: "South America", label: { en: "South America", ar: "أمريكا الجنوبية", fa: "آمریکای جنوبی", fr: "Amérique du Sud", it: "Sud America" } }
-    //   ]
+    //   ],
+    //   multiple: false,
     // },
     // {
     //   id: 3,
@@ -62,7 +65,8 @@ const Personal = [
     //     { value: "<5 years", label: { en: "<5 years", ar: "أقل من 5 سنوات", fa: "کمتر از ۵ سال", fr: "Moins de 5 ans", it: "Meno di 5 anni" } },
     //     { value: "5-10 years", label: { en: "5-10 years", ar: "5-10 سنوات", fa: "۵ تا ۱۰ سال", fr: "5 à 10 ans", it: "5-10 anni" } },
     //     { value: ">10 years", label: { en: ">10 years", ar: "أكثر من 10 سنوات", fa: "بیش از ۱۰ سال", fr: "Plus de 10 ans", it: "Oltre 10 anni" } }
-    //   ]
+    //   ],
+    //   multiple: false,
     // },
     // {
     //     id: 4,
@@ -76,7 +80,8 @@ const Personal = [
     //     options: [
     //       { value: "Yes", label: { en: "Yes", ar: "نعم", fa: "بله", fr: "Oui", it: "Sì" } },
     //       { value: "No", label: { en: "No", ar: "لا", fa: "خیر", fr: "Non", it: "No" } }
-    //     ]
+    //     ],
+    //     multiple: false,
     //   },
     //   {
     //     id: 5,
@@ -93,7 +98,8 @@ const Personal = [
     //       { value: "Undergraduate Degree", label: { en: "Undergraduate Degree", ar: "درجة البكالوريوس", fa: "مدرک کارشناسی", fr: "Diplôme de licence", it: "Laurea triennale" } },
     //       { value: "Postgraduate Degree", label: { en: "Postgraduate Degree", ar: "درجة الدراسات العليا", fa: "مدرک کارشناسی ارشد", fr: "Diplôme de master", it: "Laurea magistrale" } },
     //       { value: "PhD Degree", label: { en: "PhD Degree", ar: "درجة الدكتوراه", fa: "مدرک دکترا", fr: "Doctorat", it: "Dottorato di ricerca" } }
-    //     ]
+    //     ],
+    //     multiple: false,
     //   },
     //   {
     //     id: 6,
@@ -109,7 +115,8 @@ const Personal = [
     //       { value: "Employed", label: { en: "Employed", ar: "موظف", fa: "شاغل", fr: "Employé", it: "Impiegato" } },
     //       { value: "Freelance", label: { en: "Freelance", ar: "عمل حر", fa: "فریلنسر", fr: "Freelance", it: "Libero professionista" } },
     //       { value: "Business Owner", label: { en: "Business Owner", ar: "صاحب عمل", fa: "صاحب کسب‌وکار", fr: "Propriétaire d'entreprise", it: "Imprenditore" } }
-    //     ]
+    //     ],
+    //     multiple: false,
     //   },
     //   {
     //     id: 7,
@@ -126,7 +133,8 @@ const Personal = [
     //       { value: "Marketing", label: { en: "Marketing", ar: "التسويق", fa: "بازاریابی", fr: "Marketing", it: "Marketing" } },
     //       { value: "Legal", label: { en: "Legal", ar: "قانوني", fa: "حقوقی", fr: "Juridique", it: "Legale" } },
     //       { value: "Finance", label: { en: "Finance", ar: "المالية", fa: "مالی", fr: "Finance", it: "Finanza" } }
-    //     ]
+    //     ],
+    //     multiple: false,
     //   },
     //   {
     //     id: 8,
@@ -142,7 +150,8 @@ const Personal = [
     //       { value: "Senior Level", label: { en: "Senior Level", ar: "مستوى متقدم", fa: "سطح ارشد", fr: "Niveau senior", it: "Livello senior" } },
     //       { value: "Management Level", label: { en: "Management Level", ar: "المستوى الإداري", fa: "سطح مدیریتی", fr: "Niveau de gestion", it: "Livello di gestione" } },
     //       { value: "Executive Management", label: { en: "Executive Management", ar: "الإدارة التنفيذية", fa: "مدیریت اجرایی", fr: "Direction générale", it: "Gestione esecutiva" } }
-    //     ]
+    //     ],
+    //     multiple: false,
     //   },
       {
         id: 9,
@@ -160,7 +169,8 @@ const Personal = [
           { value: "Economics", label: { en: "Economics", ar: "الاقتصاد", fa: "اقتصاد", fr: "Économie", it: "Economia" } },
           { value: "Geography", label: { en: "Geography", ar: "الجغرافيا", fa: "جغرافیا", fr: "Géographie", it: "Geografia" } },
           { value: "HealthNutrition", label: { en: "Health & Nutrition", ar: "الصحة والتغذية", fa: "سلامت و تغذیه", fr: "Santé et nutrition", it: "Salute e nutrizione" } }
-        ]
+        ],
+        multiple: true,
       },
       // {
       //   id: 10,
@@ -176,7 +186,8 @@ const Personal = [
       //     { value: "1-3 hours/day", label: { en: "1-3 hours/day", ar: "1-3 ساعات/يوم", fa: "۱ تا ۳ ساعت در روز", fr: "1-3 heures/jour", it: "1-3 ore/giorno" } },
       //     { value: "3-5 hours/day", label: { en: "3-5 hours/day", ar: "3-5 ساعات/يوم", fa: "۳ تا ۵ ساعت در روز", fr: "3-5 heures/jour", it: "3-5 ore/giorno" } },
       //     { value: "5+ hours/day", label: { en: "5+ hours/day", ar: "5+ ساعات/يوم", fa: "بیش از ۵ ساعت در روز", fr: "5+ heures/jour", it: "5+ ore/giorno" } }
-      //   ]
+      //   ],
+      //   multiple: false,
       // },
       // {
       //   id: 11,
@@ -193,7 +204,8 @@ const Personal = [
       //     { value: "Not very concerned", label: { en: "Not very concerned", ar: "لست قلقًا كثيرًا", fa: "خیلی نگران نیستم", fr: "Peu préoccupé", it: "Poco preoccupato" } },
       //     { value: "Not at all concerned", label: { en: "Not at all concerned", ar: "لست قلقًا على الإطلاق", fa: "اصلاً نگران نیستم", fr: "Pas du tout préoccupé", it: "Per niente preoccupato" } },
       //     { value: "Don’t know", label: { en: "Don’t know", ar: "لا أعلم", fa: "نمی‌دانم", fr: "Je ne sais pas", it: "Non so" } }
-      //   ]
+      //   ],
+      //   multiple: false,
       // },
       // {
       //   id: 12,
@@ -210,7 +222,8 @@ const Personal = [
       //     { value: "Moderately important", label: { en: "Moderately important", ar: "مهم إلى حد ما", fa: "تا حدی مهم", fr: "Modérément important", it: "Moderatamente importante" } },
       //     { value: "Slightly important", label: { en: "Slightly important", ar: "قليل الأهمية", fa: "کمی مهم", fr: "Légèrement important", it: "Poco importante" } },
       //     { value: "Not important at all", label: { en: "Not important at all", ar: "غير مهم إطلاقًا", fa: "اصلاً مهم نیست", fr: "Pas du tout important", it: "Per niente importante" } }
-      //   ]
+      //   ],
+      //   multiple: false,
       // },
       // {
       //   id: 13,
@@ -227,7 +240,8 @@ const Personal = [
       //     { value: "Neither agree nor disagree", label: { en: "Neither agree nor disagree", ar: "لا أوافق ولا أعارض", fa: "نه موافقم نه مخالف", fr: "Ni d'accord ni pas d'accord", it: "Né d'accordo né in disaccordo" } },
       //     { value: "Somewhat disagree", label: { en: "Somewhat disagree", ar: "أعارض إلى حد ما", fa: "تا حدی مخالفم", fr: "Plutôt pas d'accord", it: "Abbastanza in disaccordo" } },
       //     { value: "Strongly disagree", label: { en: "Strongly disagree", ar: "أعارض بشدة", fa: "کاملاً مخالفم", fr: "Tout à fait en désaccord", it: "Fortemente in disaccordo" } }
-      //   ]
+      //   ],
+      //   multiple: false,
       // },
       // {
       //   id: 14,
@@ -246,7 +260,8 @@ const Personal = [
       //     { value: "Conservative", label: { en: "Conservative", ar: "محافظ تقليدي", fa: "محافظه‌کار", fr: "Conservateur", it: "Conservatore" } },
       //     { value: "Very conservative", label: { en: "Very conservative", ar: "محافظ تقليدي جدًا", fa: "بسیار محافظه‌کار", fr: "Très conservateur", it: "Molto conservatore" } },
       //     { value: "Prefer not to answer", label: { en: "Prefer not to answer", ar: "أفضل عدم الإجابة", fa: "ترجیح می‌دهم پاسخ ندهم", fr: "Je préfère ne pas répondre", it: "Preferisco non rispondere" } }
-      //   ]
+      //   ],
+      //   multiple: false,
       // },
       // {
       //   id: 15,
@@ -263,7 +278,8 @@ const Personal = [
       //     { value: "Neutral", label: { en: "Neutral", ar: "محايد", fa: "بی‌طرف", fr: "Neutre", it: "Neutrale" } },
       //     { value: "Somewhat favor", label: { en: "Somewhat favor", ar: "أؤيد إلى حد ما", fa: "تا حدی موافقم", fr: "Plutôt favorable", it: "Abbastanza favorevole" } },
       //     { value: "Strongly favor", label: { en: "Strongly favor", ar: "أؤيد بشدة", fa: "کاملاً موافقم", fr: "Fortement favorable", it: "Fortemente favorevole" } }
-      //   ]
+      //   ],
+      //   multiple: false,
       // },
       // {
       //   id: 16,
@@ -280,7 +296,8 @@ const Personal = [
       //     { value: "Neither optimistic nor pessimistic", label: { en: "Neither optimistic nor pessimistic", ar: "لا متفائل ولا متشائم", fa: "نه خوشبین نه بدبین", fr: "Ni optimiste ni pessimiste", it: "Né ottimista né pessimista" } },
       //     { value: "Somewhat pessimistic", label: { en: "Somewhat pessimistic", ar: "متشائم إلى حد ما", fa: "تا حدی بدبین", fr: "Plutôt pessimiste", it: "Abbastanza pessimista" } },
       //     { value: "Very pessimistic", label: { en: "Very pessimistic", ar: "متشائم جدًا", fa: "بسیار بدبین", fr: "Très pessimiste", it: "Molto pessimista" } }
-      //   ]
+      //   ],
+      //   multiple: false,
       // },
       // {
       //   id: 17,
@@ -295,9 +312,10 @@ const Personal = [
       //     { value: "Increased", label: { en: "Increased", ar: "يزداد", fa: "افزایش یابد", fr: "Augmenter", it: "Aumentare" } },
       //     { value: "Remain the same", label: { en: "Remain the same", ar: "يبقى كما هو", fa: "ثابت بماند", fr: "Rester le même", it: "Rimanere lo stesso" } },
       //     { value: "Reduced", label: { en: "Reduced", ar: "ينخفض", fa: "کاهش یابد", fr: "Diminuer", it: "Diminuire" } }
-      //   ]
+      //   ],
+      //   multiple: false,
       // }       
   ];
   
-  export default Personal;
+export default Personal;
   

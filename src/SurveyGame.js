@@ -90,48 +90,57 @@ function SurveyGame() {
   };
 
   const handleNext = async () => {
-    if (!selectedAnswer) return;
+    if (!selectedAnswer || (Array.isArray(selectedAnswer) && selectedAnswer.length === 0)) return;
   
     const updatedAnswers = [...answers];
     const currentQuestion = questionsList[step];
     let newQuestionsList = [...questionsList];
   
-    // If this is the interest question
-    if (currentQuestion?.question['en'] === "Topic(s) of interest") {
-      // Remove previously added interest questions and extra modules
-      if (lastInterest) {
-        try {
-          const prevModule = await import(`./${lastInterest}Questions/${language}.js`);
-          const prevQuestions = prevModule.default || [];
-          newQuestionsList = newQuestionsList.filter(
-            (q) => !prevQuestions.some((pq) => pq.question === q.question)
-          );
-        } catch (err) {
-          console.warn(`Failed to clean up previous interest ${lastInterest}`, err);
+    const isInterestQuestion = currentQuestion?.question['en'] === "Topic(s) of interest";
+  
+    if (isInterestQuestion) {
+      // Remove previous interest questions
+      if (lastInterest && lastInterest.length) {
+        for (const interest of lastInterest) {
+          try {
+            const prevModule = await import(`./Questions/${interest}.js`);
+            const prevQuestions = prevModule.default || [];
+            newQuestionsList = newQuestionsList.filter(
+              (q) => !prevQuestions.some((pq) => pq.question === q.question)
+            );
+          } catch (err) {
+            console.warn(`Failed to remove previous interest ${interest}`, err);
+          }
         }
       }
   
-      // Add new interest questions (if not Politics or Culture)
-      if (selectedAnswer !== "Politics" && selectedAnswer !== "Culture") {
-        try {
-          const interestModule = await import(`./Questions/${selectedAnswer}.js`);
-          const interestQuestions = interestModule.default || [];
+      const newInterests = Array.isArray(selectedAnswer) ? selectedAnswer : [selectedAnswer];
+      const interestQuestionsToInsert = [];
   
-          // Insert new questions after interest question
-          newQuestionsList.splice(step + 1, 0, ...interestQuestions);
-  
-          setLastInterest(selectedAnswer);
-        } catch (err) {
-          console.warn(`No questions found for interest: ${selectedAnswer}`, err);
-          setLastInterest(null);
+      for (const interest of newInterests) {
+        if (interest !== "Politics" && interest !== "Culture") {
+          try {
+            const interestModule = await import(`./Questions/${interest}.js`);
+            const interestQuestions = interestModule.default || [];
+            interestQuestionsToInsert.push(...interestQuestions);
+          } catch (err) {
+            console.warn(`No questions found for interest: ${interest}`, err);
+          }
         }
-      } else {
-        setLastInterest(null);
       }
+  
+      // Insert new interest questions
+      newQuestionsList.splice(step + 1, 0, ...interestQuestionsToInsert);
+      setLastInterest(newInterests);
     }
   
     // Save the current answer
-    updatedAnswers[step] = selectedAnswer;
+    const currentQ = questionsList[step];
+    if (currentQ.multiple && Array.isArray(selectedAnswer)) {
+      updatedAnswers[step] = selectedAnswer.join(" "); 
+    } else {
+      updatedAnswers[step] = selectedAnswer;
+    }
     setAnswers(updatedAnswers);
     setQuestionsList(newQuestionsList);
   
@@ -167,10 +176,10 @@ function SurveyGame() {
         console.error("Error submitting survey:", error);
       }
     } else {
-      setStep(prev => prev + 1); // ✅ Move to next question
-      setSelectedAnswer(updatedAnswers[step + 1] || ""); // ✅ Pre-fill if user goes back
+      setStep(prev => prev + 1);
+      setSelectedAnswer(updatedAnswers[step + 1] || (Array.isArray(currentQuestion.options[0]?.value) ? [] : ""));
     }
-  };    
+  };  
 
   const handleLanguageChange = (e) => {
     const newLang = e.target.value;

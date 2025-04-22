@@ -26,14 +26,14 @@ function SurveyGame() {
     const loadQuestions = async () => {
       try {
         const personalModule = await import(`./Questions/Personal.js`);
-        const climateModule = await import(`./Questions/Climate.js`);
+        // const climateModule = await import(`./Questions/Climate.js`);
 
         const personalQs = personalModule.default || [];
-        const climateQs = climateModule.default || [];
+        // const climateQs = climateModule.default || [];
   
-        const combined = [...personalQs, ...climateQs];
+        // const combined = [...personalQs, ...climateQs];
   
-        setQuestionsList(combined);
+        setQuestionsList(personalQs);
         setStep(0);
         setAnswers([]);
         setSelectedAnswer("");
@@ -113,10 +113,10 @@ function SurveyGame() {
           }
         }
       }
-  
+    
       const newInterests = Array.isArray(selectedAnswer) ? selectedAnswer : [selectedAnswer];
       const interestQuestionsToInsert = [];
-  
+    
       for (const interest of newInterests) {
         if (interest !== "Politics" && interest !== "Culture") {
           try {
@@ -128,11 +128,26 @@ function SurveyGame() {
           }
         }
       }
-  
-      // Insert new interest questions
-      newQuestionsList.splice(step + 1, 0, ...interestQuestionsToInsert);
+    
+      // Load and insert extra sets
+      const otherQuestions = [];
+      try {
+        const [climate, additional, conspiracies, big5] = await Promise.all([
+          import("./Questions/Climateclimate.js"),
+          import("./Questions/Additional.js"),
+          import("./Questions/Conspiracies.js"),
+          import("./Questions/Big5.js"),
+        ]);
+        otherQuestions.push(...(climate.default || []), ...(additional.default || []), ...(conspiracies.default || []), ...(big5.default || []));
+      } catch (err) {
+        console.warn("Failed to load extra question sets", err);
+      }
+    
+      // Insert both interest-based and extra questions after current question
+      newQuestionsList.splice(step + 1, 0, ...interestQuestionsToInsert, ...otherQuestions);
+    
       setLastInterest(newInterests);
-    }
+    }    
   
     // Save the current answer
     const currentQ = questionsList[step];

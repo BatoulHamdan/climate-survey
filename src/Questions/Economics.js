@@ -1,6 +1,6 @@
 const Economics = [
     {
-      id: 55,
+      id: 21,
       question: {
         en: "When thinking about the economy, which of the following do you believe is the most important goal for a government to prioritize?",
         ar: "عند التفكير في الاقتصاد، ما الهدف الأهم الذي تعتقد أن على الحكومة إعطاؤه الأولوية؟",
@@ -52,7 +52,7 @@ const Economics = [
       ]
     },
     {
-      id: 56,
+      id: 22,
       question: {
         en: "What is your opinion on implementing a carbon tax?",
         ar: "ما رأيك في تطبيق ضريبة الكربون؟",
@@ -114,7 +114,7 @@ const Economics = [
       ]
     },
     {
-      id: 57,
+      id: 23,
       question: {
         en: "Do you think economic growth and environmental protection can go hand in hand?",
         ar: "هل تعتقد أن النمو الاقتصادي وحماية البيئة يمكن أن يسيرا جنبًا إلى جنب؟",

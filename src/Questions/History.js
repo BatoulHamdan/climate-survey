@@ -1,6 +1,6 @@
 const History = [ 
   {
-    id: 52,
+    id: 18,
     question: {
       en: "Do you know the Paris Agreement?",
       ar: "هل تعرف اتفاقية باريس؟",
@@ -42,7 +42,7 @@ const History = [
     ]
   },
   {
-    id: 53,
+    id: 19,
     question: {
       en: "Do you think we are living in the worst period in history when it comes to the climate crisis?",
       ar: "هل تعتقد أننا نعيش في أسوأ فترة في التاريخ من حيث أزمة المناخ؟",
@@ -84,7 +84,7 @@ const History = [
     ]
   },
   {
-    id: 54,
+    id: 20,
     question: {
       en: "Do you believe that pollution levels were lower in the past than they are today?",
       ar: "هل تعتقد أن مستويات التلوث كانت أقل في الماضي مما هي عليه اليوم؟",

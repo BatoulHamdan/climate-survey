@@ -1,6 +1,6 @@
 const HealthNutrition = [
     {
-      id: 61,
+      id: 27,
       question: {
         en: "Do you feel that climate change is making it harder to find healthy food where you live?",
         ar: "هل تشعر أن تغيّر المناخ يجعل من الصعب العثور على طعام صحي حيث تعيش؟",
@@ -42,7 +42,7 @@ const HealthNutrition = [
       ]
     },
     {
-      id: 62,
+      id: 28,
       question: {
         en: "What do you think about eating less meat to help the environment and your health?",
         ar: "ما رأيك في تقليل تناول اللحوم من أجل البيئة وصحتك؟",
@@ -104,7 +104,7 @@ const HealthNutrition = [
       ]
     },
     {
-      id: 63,
+      id: 29,
       question: {
         en: "Do you think air pollution from climate change is affecting your health or the food you eat?",
         ar: "هل تعتقد أن تلوث الهواء الناتج عن تغيّر المناخ يؤثر على صحتك أو طعامك؟",
@@ -166,7 +166,7 @@ const HealthNutrition = [
       ]
     },
     {
-      id: 64,
+      id: 30,
       question: {
         en: "Schools should teach our children about the causes, consequences, and potential solutions to global warming.",
         ar: "يجب أن تُعلّم المدارس أطفالنا عن أسباب وآثار وحلول الاحتباس الحراري.",
@@ -218,7 +218,7 @@ const HealthNutrition = [
       ]
     },
     {
-      id: 65,
+      id: 31,
       question: {
         en: "Can farming that doesn’t harm nature give us better food and help the environment too?",
         ar: "هل يمكن أن توفر الزراعة التي لا تضر بالطبيعة طعامًا أفضل وتساعد البيئة أيضًا؟",

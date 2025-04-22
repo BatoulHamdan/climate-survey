@@ -1,6 +1,6 @@
 const Geography = [
     {
-      id: 58,
+      id: 24,
       question: {
         en: "Which of the following geographical phenomena do you associate with climate change? (Select all that apply)",
         ar: "أي من الظواهر الجغرافية التالية تربطها بتغير المناخ؟ (اختر كل ما ينطبق)",
@@ -62,7 +62,7 @@ const Geography = [
       ]
     },
     {
-      id: 59,
+      id: 25,
       question: {
         en: "In your opinion, which of the following regions are most vulnerable to the impacts of climate change? (You may choose more than one)",
         ar: "برأيك، أي من المناطق التالية هي الأكثر تأثراً بتغير المناخ؟ (يمكنك اختيار أكثر من واحدة)",
@@ -124,7 +124,7 @@ const Geography = [
       ]
     },
     {
-      id: 60,
+      id: 26,
       question: {
         en: "Are you aware of any climate-related migration trends (people moving due to environmental changes)?",
         ar: "هل أنت على علم بأي اتجاهات هجرة مرتبطة بالمناخ (أشخاص ينتقلون بسبب التغيرات البيئية)؟",

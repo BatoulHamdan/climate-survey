@@ -1,6 +1,6 @@
 const Climate = [
     {
-      id: 18,
+      id: 32,
       question: {
         en: "Do you think that global warming is happening?",
         ar: "هل تعتقد أن الاحتباس الحراري يحدث؟",
@@ -42,7 +42,7 @@ const Climate = [
       ]
     },
     // {
-    //     id: 19,
+    //     id: 33,
     //     question: {
     //       en: "Assuming global warming is happening, do you think it is… ?",
     //       ar: "بافتراض أن الاحتباس الحراري يحدث، هل تعتقد أنه...؟",
@@ -104,7 +104,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 20,
+    //     id: 34,
     //     question: {
     //       en: "Which comes closest to your own view about what most scientists think?",
     //       ar: "ما هو الرأي الأقرب إلى وجهة نظرك حول ما يعتقده معظم العلماء؟",
@@ -156,7 +156,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 21,
+    //     id: 35,
     //     question: {
     //       en: "How strongly do you agree or disagree with the following statement: Global warming is affecting the weather in the United States.",
     //       ar: "ما مدى موافقتك أو عدم موافقتك مع العبارة التالية: يؤثر الاحتباس الحراري على الطقس في الولايات المتحدة.",
@@ -208,7 +208,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 22,
+    //     id: 36,
     //     question: {
     //       en: "In your opinion, when will global warming start to harm people in the United States?",
     //       ar: "في رأيك، متى سيبدأ الاحتباس الحراري في إيذاء الناس في الولايات المتحدة؟",
@@ -280,7 +280,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 23,
+    //     id: 37,
     //     question: {
     //       en: "How much do you think global warming will harm you personally?",
     //       ar: "إلى أي مدى تعتقد أن الاحتباس الحراري سيؤذيك شخصياً؟",
@@ -342,7 +342,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 24,
+    //     id: 38,
     //     question: {
     //       en: "How much do you think global warming will harm future generations of people?",
     //       ar: "إلى أي مدى تعتقد أن الاحتباس الحراري سيؤذي الأجيال القادمة من الناس؟",
@@ -404,7 +404,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 25,
+    //     id: 39,
     //     question: {
     //       en: "How much do you think global warming will harm people in developing countries?",
     //       ar: "إلى أي مدى تعتقد أن الاحتباس الحراري سيؤذي الناس في البلدان النامية؟",
@@ -466,7 +466,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 26,
+    //     id: 40,
     //     question: {
     //       en: "How much do you think global warming will harm people in the United States?",
     //       ar: "إلى أي مدى تعتقد أن الاحتباس الحراري سيؤذي الناس في الولايات المتحدة؟",
@@ -528,7 +528,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 27,
+    //     id: 41,
     //     question: {
     //       en: "How much do you think global warming will harm you personally?",
     //       ar: "إلى أي مدى تعتقد أن الاحتباس الحراري سيؤذيك شخصياً؟",
@@ -590,7 +590,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 28,
+    //     id: 42,
     //     question: {
     //       en: "When do you think global warming will start to harm people in the United States?",
     //       ar: "متى تعتقد أن الاحتباس الحراري سيبدأ في إيذاء الناس في الولايات المتحدة؟",
@@ -662,7 +662,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 29,
+    //     id: 43,
     //     question: {
     //       en: "How much do you agree or disagree with the following statement: “I have personally experienced the effects of global warming”?",
     //       ar: "ما مدى اتفاقك أو اختلافك مع العبارة التالية: 'لقد تعرضت شخصياً لتأثيرات الاحتباس الحراري'؟",
@@ -714,7 +714,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 30,
+    //     id: 44,
     //     question: {
     //       en: "Fund more research into renewable energy sources, such as solar and wind power.",
     //       ar: "تمويل المزيد من البحوث في مصادر الطاقة المتجددة، مثل الطاقة الشمسية وطاقة الرياح.",
@@ -766,7 +766,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 31,
+    //     id: 45,
     //     question: {
     //       en: "Require fossil fuel companies to pay a carbon tax.",
     //       ar: "إلزام شركات الوقود الأحفوري بدفع ضريبة الكربون.",
@@ -818,7 +818,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 32,
+    //     id: 46,
     //     question: {
     //       en: "Provide tax rebates to people who purchase energy-efficient vehicles or solar panels.",
     //       ar: "تقديم خصومات ضريبية للأشخاص الذين يشترون مركبات موفرة للطاقة أو ألواح شمسية.",
@@ -870,7 +870,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 33,
+    //     id: 47,
     //     question: {
     //       en: "Set strict CO2 emission limits on coal-fired power plants.",
     //       ar: "فرض حدود صارمة لانبعاثات ثاني أكسيد الكربون على محطات توليد الطاقة التي تعمل بالفحم.",
@@ -922,7 +922,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 34,
+    //     id: 48,
     //     question: {
     //       en: "Drill for oil in the Arctic National Wildlife Refuge.",
     //       ar: "الحفر لاستخراج النفط في محمية الحياة البرية الوطنية في القطب الشمالي.",
@@ -974,7 +974,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 35,
+    //     id: 49,
     //     question: {
     //       en: "Expand offshore drilling for oil and natural gas off the U.S. coast.",
     //       ar: "توسيع الحفر البحري للنفط والغاز الطبيعي قبالة سواحل الولايات المتحدة.",
@@ -1026,7 +1026,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 36,
+    //     id: 50,
     //     question: {
     //       en: "Schools should teach our children about the causes, consequences, and potential solutions to global warming.",
     //       ar: "يجب على المدارس تعليم الأطفال أسباب وتبعات وحلول ظاهرة الاحتباس الحراري.",
@@ -1078,7 +1078,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 37,
+    //     id: 51,
     //     question: {
     //       en: "Do you think the following should be doing more or less to address global warming? Corporations and industry.",
     //       ar: "هل تعتقد أن الشركات والصناعات يجب أن تبذل مزيداً من الجهد أو أقل لمعالجة ظاهرة الاحتباس الحراري؟",
@@ -1140,7 +1140,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 38,
+    //     id: 52,
     //     question: {
     //       en: "The President.",
     //       ar: "الرئيس.",
@@ -1202,7 +1202,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 39,
+    //     id: 53,
     //     question: {
     //       en: "Congress.",
     //       ar: "الكونغرس.",
@@ -1264,7 +1264,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 40,
+    //     id: 54,
     //     question: {
     //       en: "Your Governor.",
     //       ar: "حاكم ولايتك.",
@@ -1326,7 +1326,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 41,
+    //     id: 55,
     //     question: {
     //       en: "Your local officials.",
     //       ar: "المسؤولون المحليون في منطقتك.",
@@ -1388,7 +1388,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 42,
+    //     id: 56,
     //     question: {
     //       en: "Citizens themselves.",
     //       ar: "المواطنون أنفسهم.",
@@ -1450,7 +1450,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 43,
+    //     id: 57,
     //     question: {
     //       en: "Should global warming be a priority for the next president and Congress?",
     //       ar: "هل يجب أن يكون الاحتباس الحراري أولوية للرئيس والكونغرس القادمين؟",
@@ -1502,7 +1502,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 44,
+    //     id: 58,
     //     question: {
     //       en: "Should developing sources of clean energy be a priority?",
     //       ar: "هل يجب أن يكون تطوير مصادر الطاقة النظيفة أولوية؟",
@@ -1554,7 +1554,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 45,
+    //     id: 59,
     //     question: {
     //       en: "Generate renewable energy (solar and wind) on public land in the U.S.",
     //       ar: "توليد الطاقة المتجددة (الشمسية والرياح) على الأراضي العامة في الولايات المتحدة.",
@@ -1606,7 +1606,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 46,
+    //     id: 60,
     //     question: {
     //       en: "Support U.S. economy transition from fossil fuels to 100% clean energy by 2050.",
     //       ar: "دعم انتقال الاقتصاد الأمريكي من الوقود الأحفوري إلى طاقة نظيفة بنسبة 100٪ بحلول عام 2050.",
@@ -1658,7 +1658,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 47,
+    //     id: 61,
     //     question: {
     //       en: "How often do you discuss global warming with your friends and family?",
     //       ar: "كم مرة تناقش تغير المناخ مع أصدقائك وعائلتك؟",
@@ -1710,7 +1710,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 48,
+    //     id: 62,
     //     question: {
     //       en: "How often do you hear about global warming in the media?",
     //       ar: "كم مرة تسمع عن تغير المناخ في وسائل الإعلام؟",
@@ -1772,7 +1772,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 49,
+    //     id: 63,
     //     question: {
     //       en: "How severe would you rate the personal effects of global warming that you’ve experienced?",
     //       ar: "ما مدى شدة التأثيرات الشخصية لتغير المناخ التي شعرت بها؟",
@@ -1834,7 +1834,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 50,
+    //     id: 64,
     //     question: {
     //       en: "Would you personally be willing to pay higher energy bills to support more renewable energy development (solar, wind, etc.)?",
     //       ar: "هل أنت مستعد شخصيًا لدفع فواتير طاقة أعلى لدعم تطوير المزيد من مصادر الطاقة المتجددة (الطاقة الشمسية، الرياح، إلخ)؟",
@@ -1896,7 +1896,7 @@ const Climate = [
     //     ]
     //   },
     //   {
-    //     id: 51,
+    //     id: 65,
     //     question: {
     //       en: "How responsible do you feel personally for helping reduce the effects of global warming on future generations?",
     //       ar: "ما مدى شعورك الشخصي بالمسؤولية للمساعدة في تقليل تأثيرات تغير المناخ على الأجيال القادمة؟",

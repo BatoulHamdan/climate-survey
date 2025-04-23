@@ -1,6 +1,6 @@
 const Big5 = [
     {
-      id: 88,
+      id: 83,
       question: {
         en: "I see myself as someone who is reserved.",
         ar: "أرى نفسي كشخص خجول.",
@@ -17,7 +17,7 @@ const Big5 = [
       ]
     },
     {
-      id: 89,
+      id: 84,
       question: {
         en: "I see myself as someone who is generally trusting.",
         ar: "أرى نفسي كشخص يثق بالآخرين بشكل عام.",
@@ -34,7 +34,7 @@ const Big5 = [
       ]
     },
     {
-      id: 90,
+      id: 85,
       question: {
         en: "I see myself as someone who tends to be lazy.",
         ar: "أرى نفسي كشخص يميل إلى الكسل.",
@@ -51,7 +51,7 @@ const Big5 = [
       ]
     },
     {
-      id: 91,
+      id: 86,
       question: {
         en: "I see myself as someone who is relaxed, handles stress well.",
         ar: "أرى نفسي كشخص هادئ ويعالج التوتر جيدًا.",
@@ -68,7 +68,7 @@ const Big5 = [
       ]
     },
     {
-        id: 92,
+        id: 87,
         question: {
           en: "I see myself as someone who has few artistic interests.",
           ar: "أرى نفسي كشخص لديه اهتمام ضئيل بالفن.",
@@ -85,7 +85,7 @@ const Big5 = [
         ]
       },
       {
-        id: 93,
+        id: 88,
         question: {
           en: "I see myself as someone who is outgoing, sociable.",
           ar: "أرى نفسي كشخص اجتماعي ومنفتح.",
@@ -102,7 +102,7 @@ const Big5 = [
         ]
       },
       {
-        id: 94,
+        id: 89,
         question: {
           en: "I see myself as someone who tends to find fault with others.",
           ar: "أرى نفسي كشخص يميل إلى لوم الآخرين.",
@@ -119,7 +119,7 @@ const Big5 = [
         ]
       },
       {
-        id: 95,
+        id: 90,
         question: {
           en: "I see myself as someone who does a thorough job.",
           ar: "أرى نفسي كشخص يؤدي عمله بشكل دقيق.",
@@ -136,7 +136,7 @@ const Big5 = [
         ]
       },
       {
-        id: 96,
+        id: 91,
         question: {
           en: "I see myself as someone who gets nervous easily.",
           ar: "أرى نفسي كشخص يصبح عصبيًا بسهولة.",
@@ -153,7 +153,7 @@ const Big5 = [
         ]
       },
       {
-        id: 97,
+        id: 92,
         question: {
           en: "I see myself as someone who has an active imagination.",
           ar: "أرى نفسي كشخص لديه خيال نشط.",

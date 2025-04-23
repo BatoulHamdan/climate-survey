@@ -1,23 +1,6 @@
 const Additional = [
     {
-      id: 66,
-      question: {
-        en: "How concerned are you that policies to address global warming will increase your cost of living?",
-        ar: "ما مدى قلقك من أن تؤدي السياسات لمعالجة الاحتباس الحراري إلى زيادة تكاليف المعيشة؟",
-        fa: "چقدر نگران هستید که سیاست‌های مقابله با گرمایش زمین هزینه زندگی شما را افزایش دهد؟",
-        fr: "Dans quelle mesure êtes-vous préoccupé que les politiques contre le réchauffement climatique augmentent votre coût de la vie ?",
-        it: "Quanto sei preoccupato che le politiche contro il riscaldamento globale aumentino il tuo costo della vita?"
-      },
-      options: [
-        { value: "Very concerned", label: { en: "Very concerned", ar: "قلق جدًا", fa: "بسیار نگران", fr: "Très préoccupé", it: "Molto preoccupato" } },
-        { value: "Somewhat concerned", label: { en: "Somewhat concerned", ar: "قلق إلى حد ما", fa: "تا حدودی نگران", fr: "Assez préoccupé", it: "Un po' preoccupato" } },
-        { value: "Not very concerned", label: { en: "Not very concerned", ar: "غير قلق جدًا", fa: "خیلی نگران نیستم", fr: "Peu préoccupé", it: "Poco preoccupato" } },
-        { value: "Not at all concerned", label: { en: "Not at all concerned", ar: "غير قلق على الإطلاق", fa: "اصلاً نگران نیستم", fr: "Pas du tout préoccupé", it: "Per niente preoccupato" } },
-        { value: "Don’t know", label: { en: "Don’t know", ar: "لا أعرف", fa: "نمی‌دانم", fr: "Je ne sais pas", it: "Non lo so" } }
-      ]
-    },
-    {
-      id: 67,
+      id: 65,
       question: {
         en: "How important is it to you that this country leads the world in new technologies and innovation?",
         ar: "ما مدى أهمية أن تكون بلدك رائدة في العالم في التقنيات الجديدة والابتكار؟",
@@ -34,7 +17,7 @@ const Additional = [
       ]
     },
     {
-      id: 68,
+      id: 66,
       question: {
         en: "Do you agree or disagree with the statement: True patriotism means leaving the country better than you found it.",
         ar: "هل توافق أو لا توافق على العبارة: الوطنية الحقيقية تعني ترك البلاد في حال أفضل مما وجدتها؟",
@@ -51,7 +34,7 @@ const Additional = [
       ]
     },
     {
-      id: 69,
+      id: 67,
       question: {
         en: "On social and political issues, where would you place yourself?",
         ar: "في القضايا الاجتماعية والسياسية، أين تضع نفسك؟",
@@ -67,55 +50,6 @@ const Additional = [
         { value: "Conservative", label: { en: "Conservative", ar: "محافظ", fa: "محافظه‌کار", fr: "Conservateur", it: "Conservatore" } },
         { value: "Very conservative", label: { en: "Very conservative", ar: "محافظ جدًا", fa: "بسیار محافظه‌کار", fr: "Très conservateur", it: "Molto conservatore" } },
         { value: "Prefer not to answer", label: { en: "Prefer not to answer", ar: "أفضل عدم الإجابة", fa: "ترجیح می‌دهم پاسخ ندهم", fr: "Je préfère ne pas répondre", it: "Preferisco non rispondere" } }
-      ]
-    },
-    {
-      id: 70,
-      question: {
-        en: "An ideal society requires some groups to be on top and others to be on the bottom.",
-        ar: "المجتمع المثالي يتطلب أن تكون بعض المجموعات في القمة وأخرى في الأسفل.",
-        fa: "یک جامعه ایده‌آل نیاز دارد برخی گروه‌ها در بالا و برخی در پایین باشند.",
-        fr: "Une société idéale exige que certains groupes soient au sommet et d'autres au bas.",
-        it: "Una società ideale richiede che alcuni gruppi siano al vertice e altri alla base."
-      },
-      options: [
-        { value: "Strongly oppose", label: { en: "Strongly oppose", ar: "أعارض بشدة", fa: "کاملاً مخالفم", fr: "Fortement opposé", it: "Fortemente contrario" } },
-        { value: "Somewhat oppose", label: { en: "Somewhat oppose", ar: "أعارض إلى حد ما", fa: "تا حدی مخالفم", fr: "Plutôt opposé", it: "Abbastanza contrario" } },
-        { value: "Neutral", label: { en: "Neutral", ar: "محايد", fa: "بی‌طرف", fr: "Neutre", it: "Neutrale" } },
-        { value: "Somewhat favor", label: { en: "Somewhat favor", ar: "أؤيد إلى حد ما", fa: "تا حدی موافقم", fr: "Plutôt favorable", it: "Abbastanza favorevole" } },
-        { value: "Strongly favor", label: { en: "Strongly favor", ar: "أؤيد بشدة", fa: "کاملاً موافقم", fr: "Fortement favorable", it: "Fortemente favorevole" } }
-      ]
-    },
-    {
-      id: 71,
-      question: {
-        en: "Do you feel optimistic or pessimistic about the future?",
-        ar: "هل تشعر بالتفاؤل أم بالتشاؤم بشأن المستقبل؟",
-        fa: "نسبت به آینده خوشبین هستید یا بدبین؟",
-        fr: "Vous sentez-vous optimiste ou pessimiste quant à l'avenir ?",
-        it: "Ti senti ottimista o pessimista riguardo al futuro?"
-      },
-      options: [
-        { value: "Very optimistic", label: { en: "Very optimistic", ar: "متفائل جدًا", fa: "بسیار خوشبین", fr: "Très optimiste", it: "Molto ottimista" } },
-        { value: "Somewhat optimistic", label: { en: "Somewhat optimistic", ar: "متفائل إلى حد ما", fa: "تا حدی خوشبین", fr: "Plutôt optimiste", it: "Abbastanza ottimista" } },
-        { value: "Neither optimistic nor pessimistic", label: { en: "Neither optimistic nor pessimistic", ar: "لست متفائلًا ولا متشائمًا", fa: "نه خوشبینم نه بدبین", fr: "Ni optimiste ni pessimiste", it: "Né ottimista né pessimista" } },
-        { value: "Somewhat pessimistic", label: { en: "Somewhat pessimistic", ar: "متشائم إلى حد ما", fa: "تا حدی بدبین", fr: "Plutôt pessimiste", it: "Abbastanza pessimista" } },
-        { value: "Very pessimistic", label: { en: "Very pessimistic", ar: "متشائم جدًا", fa: "بسیار بدبین", fr: "Très pessimiste", it: "Molto pessimista" } }
-      ]
-    },
-    {
-      id: 72,
-      question: {
-        en: "Do you think the number of immigrants to your country should be increased, reduced, or remain the same?",
-        ar: "هل تعتقد أنه يجب زيادة أو تقليل عدد المهاجرين إلى بلدك أو أن يظل كما هو؟",
-        fa: "آیا فکر می‌کنید تعداد مهاجران به کشور شما باید افزایش یابد، کاهش یابد یا ثابت بماند؟",
-        fr: "Pensez-vous que le nombre d'immigrants dans votre pays devrait être augmenté, réduit ou rester le même ?",
-        it: "Pensi che il numero di immigrati nel tuo paese debba aumentare, diminuire o rimanere lo stesso?"
-      },
-      options: [
-        { value: "Increased", label: { en: "Increased", ar: "زيادة", fa: "افزایش یابد", fr: "Augmenté", it: "Aumentato" } },
-        { value: "Remain the same", label: { en: "Remain the same", ar: "يظل كما هو", fa: "ثابت بماند", fr: "Rester le même", it: "Rimanere lo stesso" } },
-        { value: "Reduced", label: { en: "Reduced", ar: "تقليل", fa: "کاهش یابد", fr: "Réduit", it: "Ridotto" } }
       ]
     }
   ];

@@ -59,7 +59,8 @@ const Geography = [
             it: "Nessuna delle precedenti"
           }
         }
-      ]
+      ],
+      multiple: true,
     },
     {
       id: 25,
@@ -121,7 +122,8 @@ const Geography = [
             it: "Non lo so"
           }
         }
-      ]
+      ],
+      multiple: true,
     },
     {
       id: 26,
@@ -163,7 +165,8 @@ const Geography = [
             it: "Ne ho sentito parlare, ma non so molto"
           }
         }
-      ]
+      ],
+      multiple: false,
     }
   ];
   

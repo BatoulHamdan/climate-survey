@@ -1,6 +1,6 @@
 const Conspiracies = [
     {
-      id: 73,
+      id: 68,
       question: {
         en: "The spread of certain viruses and/or diseases is the result of the deliberate, concealed efforts of some organization.",
         ar: "انتشار بعض الفيروسات و/أو الأمراض هو نتيجة لجهود خفية ومتعمدة من قبل بعض المنظمات.",
@@ -17,7 +17,7 @@ const Conspiracies = [
       ]
     },
     {
-        id: 74,
+        id: 69,
         question: {
           en: "A lot of important information is deliberately concealed from the public out of self-interest.",
           ar: "يتم إخفاء الكثير من المعلومات الهامة عن العامة بدافع المصلحة الذاتية.",
@@ -34,7 +34,7 @@ const Conspiracies = [
         ]
       },
       {
-        id: 75,
+        id: 70,
         question: {
           en: "Certain significant events have been the result of the activity of a small group that secretly manipulates world events.",
           ar: "بعض الأحداث المهمة كانت نتيجة لنشاط مجموعة صغيرة تسيطر سراً على مجريات الأمور في العالم.",
@@ -51,7 +51,7 @@ const Conspiracies = [
         ]
       },
       {
-        id: 76,
+        id: 71,
         question: {
           en: "The government uses innocent people as patsies to hide its involvement in criminal activity.",
           ar: "تستخدم الحكومة أشخاصًا أبرياء ككبش فداء لإخفاء تورطها في أنشطة إجرامية.",
@@ -68,7 +68,7 @@ const Conspiracies = [
         ]
       },
       {
-        id: 77,
+        id: 72,
         question: {
           en: "Experiments involving new drugs or technologies are routinely carried out on the public without their knowledge or consent.",
           ar: "تُجرى تجارب على أدوية أو تقنيات جديدة على العامة بشكل روتيني دون علمهم أو موافقتهم.",
@@ -85,7 +85,7 @@ const Conspiracies = [
         ]
       },
       {
-        id: 78,
+        id: 73,
         question: {
           en: "The government permits or perpetrates acts of terrorism on its own soil, disguising its involvement.",
           ar: "تسمح الحكومة أو تنفذ أعمالًا إرهابية على أراضيها، مع إخفاء تورطها.",
@@ -102,7 +102,7 @@ const Conspiracies = [
         ]
       },
       {
-        id: 79,
+        id: 74,
         question: {
           en: "New and advanced technology which would harm current industry is being suppressed.",
           ar: "يتم قمع التكنولوجيا الجديدة والمتقدمة التي قد تضر بالصناعة الحالية.",
@@ -119,7 +119,7 @@ const Conspiracies = [
         ]
       },
       {
-        id: 80,
+        id: 75,
         question: {
           en: "The power held by heads of state is second to that of small unknown groups who really control world politics.",
           ar: "السلطة التي يحتفظ بها رؤساء الدول تأتي في المرتبة الثانية بعد مجموعات صغيرة غير معروفة تتحكم فعليًا في السياسة العالمية.",
@@ -136,7 +136,7 @@ const Conspiracies = [
         ]
       },
       {
-        id: 81,
+        id: 76,
         question: {
           en: "Secret organizations communicate with extraterrestrials, but keep this fact from the public.",
           ar: "تتواصل منظمات سرية مع كائنات فضائية، لكنها تخفي هذا الأمر عن العامة.",
@@ -153,7 +153,7 @@ const Conspiracies = [
         ]
       },
       {
-        id: 82,
+        id: 77,
         question: {
           en: "Some UFO sightings and rumors are planned or staged in order to distract the public from real alien contact.",
           ar: "بعض مشاهدات الأجسام الطائرة المجهولة والشائعات يتم التخطيط لها أو تنظيمها لتشتيت انتباه الجمهور عن الاتصال الحقيقي بالكائنات الفضائية.",
@@ -170,7 +170,7 @@ const Conspiracies = [
         ]
       },
       {
-        id: 83,
+        id: 78,
         question: {
           en: "The government is involved in the murder of innocent citizens and/or well-known public figures, and keeps this a secret.",
           ar: "الحكومة متورطة في قتل مواطنين أبرياء و/أو شخصيات عامة معروفة، وتُخفي هذا الأمر.",
@@ -187,7 +187,7 @@ const Conspiracies = [
         ]
       },
       {
-        id: 84,
+        id: 79,
         question: {
           en: "A small, secret group of people is responsible for making all major decisions, such as going to war.",
           ar: "مجموعة صغيرة وسرية من الأشخاص مسؤولة عن اتخاذ جميع القرارات الكبرى، مثل خوض الحروب.",
@@ -204,7 +204,7 @@ const Conspiracies = [
         ]
       },
       {
-        id: 85,
+        id: 80,
         question: {
           en: "Technology with mind-control capacities is used on people without their knowledge.",
           ar: "تُستخدم تكنولوجيا تتحكم في العقول على الناس دون علمهم.",
@@ -221,7 +221,7 @@ const Conspiracies = [
         ]
       },
       {
-        id: 86,
+        id: 81,
         question: {
           en: "Evidence of alien contact is being concealed from the public.",
           ar: "يتم إخفاء أدلة الاتصال بالكائنات الفضائية عن الجمهور.",
@@ -238,7 +238,7 @@ const Conspiracies = [
         ]
       },
       {
-        id: 87,
+        id: 82,
         question: {
           en: "Groups of scientists manipulate, fabricate, or suppress evidence in order to deceive the public.",
           ar: "تقوم مجموعات من العلماء بالتلاعب بالأدلة أو تزويرها أو إخفائها لخداع الجمهور.",

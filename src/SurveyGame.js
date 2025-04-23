@@ -146,10 +146,10 @@ function SurveyGame() {
           }
         }
       }
-  
+    
       const newInterests = Array.isArray(selectedAnswer) ? selectedAnswer : [selectedAnswer];
       const interestQuestionsToInsert = [];
-  
+    
       for (const interest of newInterests) {
         if (interest !== "Politics" && interest !== "Culture") {
           try {
@@ -161,9 +161,11 @@ function SurveyGame() {
           }
         }
       }
-  
-      const insertIndex = step + 1;
-  
+    
+      // Insert AFTER the last Personal question (assumed to be id === 8)
+      const personalLastIndex = newQuestionsList.findIndex(q => q?.id === 8);
+      const insertIndex = personalLastIndex + 1;
+    
       if (!otherQuestionsAdded) {
         try {
           const [climate, additional, conspiracies, big5] = await Promise.all([
@@ -178,7 +180,7 @@ function SurveyGame() {
             ...(conspiracies.default || []),
             ...(big5.default || []),
           ];
-  
+    
           newQuestionsList.splice(insertIndex, 0, ...interestQuestionsToInsert, ...otherQuestions);
           setOtherQuestionsAdded(true);
         } catch (err) {
@@ -187,9 +189,9 @@ function SurveyGame() {
       } else {
         newQuestionsList.splice(insertIndex, 0, ...interestQuestionsToInsert);
       }
-  
+    
       setLastInterest(newInterests);
-    }
+    }    
   
     // Save the current answer
     if (currentQuestion?.multiple && Array.isArray(selectedAnswer)) {
@@ -206,7 +208,7 @@ function SurveyGame() {
       setSurveyCompleted(true);
       const userId = sessionStorage.getItem("userId");
   
-      const structuredAnswers = Array.from({ length: 98 }, (_, id) => {
+      const structuredAnswers = Array.from({ length: 93 }, (_, id) => {
         const index = newQuestionsList.findIndex(q => q?.id === id);
         return {
           questionId: id.toString(),

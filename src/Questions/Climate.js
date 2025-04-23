@@ -924,7 +924,7 @@ const Climate = [
       {
         id: 48,
         question: {
-          en: "Drill for oil in the Arctic National Wildlife Refuge.",
+          en: "Drill for oil in natura areas of reserves.",
           ar: "الحفر لاستخراج النفط في محمية الحياة البرية الوطنية في القطب الشمالي.",
           fa: "حفاری نفت در پناهگاه ملی حیات‌وحش قطب شمال.",
           fr: "Forer pour le pétrole dans le Refuge faunique national de l'Arctique.",
@@ -1028,58 +1028,6 @@ const Climate = [
       {
         id: 50,
         question: {
-          en: "Schools should teach our children about the causes, consequences, and potential solutions to global warming.",
-          ar: "يجب على المدارس تعليم الأطفال أسباب وتبعات وحلول ظاهرة الاحتباس الحراري.",
-          fa: "مدارس باید به کودکان درباره علل، پیامدها و راه‌حل‌های احتمالی گرمایش جهانی آموزش دهند.",
-          fr: "Les écoles devraient enseigner aux enfants les causes, les conséquences et les solutions potentielles au réchauffement climatique.",
-          it: "Le scuole dovrebbero insegnare ai bambini le cause, le conseguenze e le soluzioni potenziali del riscaldamento globale."
-        },
-        options: [
-          {
-            value: "Strongly agree",
-            label: {
-              en: "Strongly agree",
-              ar: "أوافق بشدة",
-              fa: "کاملاً موافقم",
-              fr: "Tout à fait d'accord",
-              it: "Fortemente d'accordo"
-            }
-          },
-          {
-            value: "Somewhat agree",
-            label: {
-              en: "Somewhat agree",
-              ar: "أوافق إلى حد ما",
-              fa: "تا حدی موافقم",
-              fr: "Plutôt d'accord",
-              it: "Abbastanza d'accordo"
-            }
-          },
-          {
-            value: "Somewhat disagree",
-            label: {
-              en: "Somewhat disagree",
-              ar: "أعارض إلى حد ما",
-              fa: "تا حدی مخالفم",
-              fr: "Plutôt en désaccord",
-              it: "Abbastanza in disaccordo"
-            }
-          },
-          {
-            value: "Strongly disagree",
-            label: {
-              en: "Strongly disagree",
-              ar: "أعارض بشدة",
-              fa: "کاملاً مخالفم",
-              fr: "Tout à fait en désaccord",
-              it: "Completamente in disaccordo"
-            }
-          }
-        ]
-      },
-      {
-        id: 51,
-        question: {
           en: "Do you think the following should be doing more or less to address global warming? Corporations and industry.",
           ar: "هل تعتقد أن الشركات والصناعات يجب أن تبذل مزيداً من الجهد أو أقل لمعالجة ظاهرة الاحتباس الحراري؟",
           fa: "آیا فکر می‌کنید شرکت‌ها و صنایع باید بیشتر یا کمتر برای مقابله با گرمایش جهانی اقدام کنند؟",
@@ -1140,7 +1088,7 @@ const Climate = [
         ]
       },
       {
-        id: 52,
+        id: 51,
         question: {
           en: "The President.",
           ar: "الرئيس.",
@@ -1202,7 +1150,7 @@ const Climate = [
         ]
       },
       {
-        id: 53,
+        id: 52,
         question: {
           en: "Congress.",
           ar: "الكونغرس.",
@@ -1264,7 +1212,7 @@ const Climate = [
         ]
       },
       {
-        id: 54,
+        id: 53,
         question: {
           en: "Your Governor.",
           ar: "حاكم ولايتك.",
@@ -1326,7 +1274,7 @@ const Climate = [
         ]
       },
       {
-        id: 55,
+        id: 54,
         question: {
           en: "Your local officials.",
           ar: "المسؤولون المحليون في منطقتك.",
@@ -1388,7 +1336,7 @@ const Climate = [
         ]
       },
       {
-        id: 56,
+        id: 55,
         question: {
           en: "Citizens themselves.",
           ar: "المواطنون أنفسهم.",
@@ -1450,7 +1398,7 @@ const Climate = [
         ]
       },
       {
-        id: 57,
+        id: 56,
         question: {
           en: "Should global warming be a priority for the next president and Congress?",
           ar: "هل يجب أن يكون الاحتباس الحراري أولوية للرئيس والكونغرس القادمين؟",
@@ -1502,7 +1450,7 @@ const Climate = [
         ]
       },
       {
-        id: 58,
+        id: 57,
         question: {
           en: "Should developing sources of clean energy be a priority?",
           ar: "هل يجب أن يكون تطوير مصادر الطاقة النظيفة أولوية؟",
@@ -1554,7 +1502,7 @@ const Climate = [
         ]
       },
       {
-        id: 59,
+        id: 58,
         question: {
           en: "Generate renewable energy (solar and wind) on public land in your country.",
           ar: "توليد الطاقة المتجددة (الشمسية والرياح) على الأراضي العامة في بلدك.",
@@ -1606,7 +1554,7 @@ const Climate = [
         ]
       },
       {
-        id: 60,
+        id: 59,
         question: {
           en: "Support the economy transition from fossil fuels to 100% clean energy by 2050.",
           ar: "دعم انتقال اقتصاد بلدك من الوقود الأحفوري إلى طاقة نظيفة بنسبة 100٪ بحلول عام 2050.",
@@ -1658,7 +1606,7 @@ const Climate = [
         ]
       },
       {
-        id: 61,
+        id: 60,
         question: {
           en: "How often do you discuss global warming with your friends and family?",
           ar: "كم مرة تناقش تغير المناخ مع أصدقائك وعائلتك؟",
@@ -1710,7 +1658,7 @@ const Climate = [
         ]
       },
       {
-        id: 62,
+        id: 61,
         question: {
           en: "How often do you hear about global warming in the media?",
           ar: "كم مرة تسمع عن تغير المناخ في وسائل الإعلام؟",
@@ -1772,7 +1720,7 @@ const Climate = [
         ]
       },
       {
-        id: 63,
+        id: 62,
         question: {
           en: "How severe would you rate the personal effects of global warming that you’ve experienced?",
           ar: "ما مدى شدة التأثيرات الشخصية لتغير المناخ التي شعرت بها؟",
@@ -1834,7 +1782,7 @@ const Climate = [
         ]
       },
       {
-        id: 64,
+        id: 63,
         question: {
           en: "Would you personally be willing to pay higher energy bills to support more renewable energy development (solar, wind, etc.)?",
           ar: "هل أنت مستعد شخصيًا لدفع فواتير طاقة أعلى لدعم تطوير المزيد من مصادر الطاقة المتجددة (الطاقة الشمسية، الرياح، إلخ)؟",
@@ -1895,8 +1843,8 @@ const Climate = [
           }
         ]
       },
-      {
-        id: 65,
+      { 
+        id: 64,
         question: {
           en: "How responsible do you feel personally for helping reduce the effects of global warming on future generations?",
           ar: "ما مدى شعورك الشخصي بالمسؤولية للمساعدة في تقليل تأثيرات تغير المناخ على الأجيال القادمة؟",

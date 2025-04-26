@@ -924,12 +924,12 @@ const Climate = [
     {
       id: 48,
       question: {
-        en: "Drill for oil in natural areas of reserves.",
-        ar: "الحفر لاستخراج النفط في المناطق الطبيعية للمحميات.",
-        fa: "حفاری نفت در مناطق طبیعی پناهگاه‌ها.",
-        fr: "Forer pour le pétrole dans les zones naturelles des réserves.",
-        it: "Trivellare per il petrolio nelle aree naturali delle riserve."
-      },        
+        en: "Drill for oil in natural areas or reserves.",
+        ar: "الحفر لاستخراج النفط في المناطق الطبيعية أو المحميات.",
+        fa: "حفاری برای نفت در مناطق طبیعی یا ذخایر.",
+        fr: "Forer pour du pétrole dans des zones naturelles ou des réserves.",
+        it: "Trivellare per il petrolio in aree naturali o riserve."
+      },             
       options: [
         {
           value: "Strongly support",

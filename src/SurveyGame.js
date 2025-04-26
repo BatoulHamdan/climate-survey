@@ -102,145 +102,150 @@ function SurveyGame() {
     const currentQuestion = questionsList[step];
     let newQuestionsList = [...questionsList];
   
-    if (currentQuestion?.question?.en === "Job Status") {
-      if (selectedAnswer === "Unemployed") {
-        newQuestionsList = newQuestionsList.filter(q => q?.id !== 7 && q?.id !== 8);
-      } else if (selectedAnswer === "Employed") {
-        try {
-          const personalModule = await import("./Questions/Personal.js");  
+    try {
+      // --- Handle "Job Status"
+      if (currentQuestion?.question?.en === "Job Status") {
+        if (selectedAnswer === "Unemployed") {
+          newQuestionsList = newQuestionsList.filter(q => q?.id !== 7 && q?.id !== 8);
+        } else if (selectedAnswer === "Employed") {
+          const personalModule = await import("./Questions/Personal.js");
           const jobRole = personalModule?.default?.find(q => q?.id === 7);
           const jobLevel = personalModule?.default?.find(q => q?.id === 8);
   
           const jobStatusIndex = newQuestionsList.findIndex(q => q?.question?.en === "Job Status");
   
           if (jobStatusIndex !== -1) {
-            if (jobRole && !newQuestionsList.some(q => q?.id === 7)) {
-              newQuestionsList.splice(jobStatusIndex + 1, 0, jobRole);  
+            const existingIds = newQuestionsList.map(q => q.id);
+  
+            if (jobRole && !existingIds.includes(7)) {
+              newQuestionsList.splice(jobStatusIndex + 1, 0, jobRole);
             }
-  
-            if (jobLevel && !newQuestionsList.some(q => q?.id === 8)) {
-              newQuestionsList.splice(jobStatusIndex + 2, 0, jobLevel);  
+            if (jobLevel && !existingIds.includes(8)) {
+              newQuestionsList.splice(jobStatusIndex + 2, 0, jobLevel);
             }
-          } else {
-            console.warn("'Job Status' not found in questions list");
           }
-        } catch (err) {
-          console.error("Failed to load 'Job Role' and 'Job Level' from Personal module", err);
         }
       }
-    }
   
-    const isInterestQuestion = currentQuestion?.question?.en === "Topic(s) of interest";
+      // --- Handle "Topic(s) of interest"
+      if (currentQuestion?.question?.en === "Topic(s) of interest") {
+        const existingTexts = newQuestionsList.map(q => q?.question?.en);
   
-    if (isInterestQuestion) {
-      if (lastInterest && lastInterest.length) {
-        for (const interest of lastInterest) {
-          try {
-            const prevModule = await import(`./Questions/${interest}.js`);
-            const prevQuestions = prevModule.default || [];
-            newQuestionsList = newQuestionsList.filter(
-              (q) => !prevQuestions.some((pq) => pq?.question === q?.question)
-            );
-          } catch (err) {
-            console.warn(`Failed to remove previous interest ${interest}`, err);
+        // Remove previous interests if any
+        if (lastInterest?.length) {
+          for (const interest of lastInterest) {
+            try {
+              const prevModule = await import(`./Questions/${interest}.js`);
+              const prevQuestions = prevModule.default || [];
+              newQuestionsList = newQuestionsList.filter(q => 
+                !prevQuestions.some(pq => pq?.question?.en === q?.question?.en)
+              );
+            } catch (err) {
+              console.warn(`Failed to remove questions from previous interest: ${interest}`, err);
+            }
           }
         }
-      }
-    
-      const newInterests = Array.isArray(selectedAnswer) ? selectedAnswer : [selectedAnswer];
-      const interestQuestionsToInsert = [];
-    
-      for (const interest of newInterests) {
-        if (interest !== "Politics" && interest !== "Culture") {
-          try {
-            const interestModule = await import(`./Questions/${interest}.js`);
-            const interestQuestions = interestModule.default || [];
-            interestQuestionsToInsert.push(...interestQuestions);
-          } catch (err) {
-            console.warn(`No questions found for interest: ${interest}`, err);
+  
+        const newInterests = Array.isArray(selectedAnswer) ? selectedAnswer : [selectedAnswer];
+        const interestQuestionsToInsert = [];
+  
+        for (const interest of newInterests) {
+          if (interest !== "Politics" && interest !== "Culture") {
+            try {
+              const interestModule = await import(`./Questions/${interest}.js`);
+              const interestQuestions = interestModule.default || [];
+              interestQuestions.forEach(q => {
+                if (q?.question?.en && !existingTexts.includes(q.question.en)) {
+                  interestQuestionsToInsert.push(q);
+                }
+              });
+            } catch (err) {
+              console.warn(`No questions found for interest: ${interest}`, err);
+            }
           }
         }
+  
+        // Insert interest questions after Personal (id 8)
+        const insertAfterIndex = newQuestionsList.findIndex(q => q?.id === 8);
+        const insertIndex = insertAfterIndex !== -1 ? insertAfterIndex + 1 : newQuestionsList.length;
+  
+        if (!otherQuestionsAdded) {
+          try {
+            const [climate, additional, conspiracies, big5] = await Promise.all([
+              import("./Questions/Climate.js"),
+              import("./Questions/Additional.js"),
+              import("./Questions/Conspiracies.js"),
+              import("./Questions/Big5.js"),
+            ]);
+  
+            const extraQuestions = [
+              ...(climate.default || []),
+              ...(additional.default || []),
+              ...(conspiracies.default || []),
+              ...(big5.default || []),
+            ];
+  
+            extraQuestions.forEach(q => {
+              if (q?.question?.en && !existingTexts.includes(q.question.en)) {
+                interestQuestionsToInsert.push(q);
+              }
+            });
+  
+            setOtherQuestionsAdded(true);
+          } catch (err) {
+            console.warn("Failed to load extra question sets", err);
+          }
+        }
+  
+        if (interestQuestionsToInsert.length > 0) {
+          newQuestionsList.splice(insertIndex, 0, ...interestQuestionsToInsert);
+        }
+  
+        setLastInterest(newInterests);
       }
-    
-      // Insert AFTER the last Personal question (assumed to be id === 8)
-      const personalLastIndex = newQuestionsList.findIndex(q => q?.id === 8);
-      const insertIndex = personalLastIndex + 1;
-    
-      if (!otherQuestionsAdded) {
+  
+      // --- Save answer
+      if (currentQuestion?.multiple && Array.isArray(selectedAnswer)) {
+        updatedAnswers[step] = selectedAnswer.join(", ");
+      } else {
+        updatedAnswers[step] = selectedAnswer;
+      }
+  
+      setAnswers(updatedAnswers);
+      setQuestionsList(newQuestionsList);
+  
+      // --- Final Step Check
+      if (step >= newQuestionsList.length - 1) {
+        setSurveyCompleted(true);
+  
+        const userId = sessionStorage.getItem("userId");
+  
+        const structuredAnswers = newQuestionsList.map((q, index) => ({
+          questionId: q?.id?.toString() ?? index.toString(),
+          answer: updatedAnswers[index] || "N/A",
+        }));
+  
         try {
-          const [climate, additional, conspiracies, big5] = await Promise.all([
-            import("./Questions/Climate.js"),
-            import("./Questions/Additional.js"),
-            import("./Questions/Conspiracies.js"),
-            import("./Questions/Big5.js"),
-          ]);
-          const otherQuestions = [
-            ...(climate.default || []),
-            ...(additional.default || []),
-            ...(conspiracies.default || []),
-            ...(big5.default || []),
-          ];
-    
-          newQuestionsList.splice(insertIndex, 0, ...interestQuestionsToInsert, ...otherQuestions);
-          setOtherQuestionsAdded(true);
-        } catch (err) {
-          console.warn("Failed to load extra question sets", err);
+          const response = await fetch("https://climate-survey-backend.onrender.com/api/surveys", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ userId, answers: structuredAnswers }),
+          });
+  
+          const result = await response.json();
+          sessionStorage.setItem("userCode", result.userCode);
+          setUserCode(result.userCode);
+        } catch (error) {
+          console.error("Error submitting survey:", error);
         }
       } else {
-        newQuestionsList.splice(insertIndex, 0, ...interestQuestionsToInsert);
+        const nextStep = step + 1;
+        const nextQuestion = newQuestionsList[nextStep];
+        setStep(nextStep);
+        setSelectedAnswer(updatedAnswers[nextStep] || (nextQuestion?.multiple ? [] : ""));
       }
-    
-      setLastInterest(newInterests);
-    }    
-  
-    // Save the current answer
-    if (currentQuestion?.multiple && Array.isArray(selectedAnswer)) {
-      updatedAnswers[step] = selectedAnswer.join(" ");
-    } else {
-      updatedAnswers[step] = selectedAnswer;
-    }
-  
-    setAnswers(updatedAnswers);
-    setQuestionsList(newQuestionsList);
-  
-    // Final step
-    if (step >= newQuestionsList.length - 1) {
-      setSurveyCompleted(true);
-      const userId = sessionStorage.getItem("userId");
-  
-      const structuredAnswers = Array.from({ length: 93 }, (_, id) => {
-        const index = newQuestionsList.findIndex(q => q?.id === id);
-        return {
-          questionId: id.toString(),
-          answer: index !== -1 && updatedAnswers[index] ? updatedAnswers[index] : "N/A",
-        };
-      });
-  
-      try {
-        const response = await fetch("https://climate-survey-backend.onrender.com/api/surveys", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            userId,
-            answers: structuredAnswers,
-          }),
-        });
-  
-        const result = await response.json();
-        sessionStorage.setItem("userCode", result.userCode);
-        setUserCode(result.userCode);
-      } catch (error) {
-        console.error("Error submitting survey:", error);
-      }
-    } else {
-      const nextQuestionId = newQuestionsList[step + 1]?.id;
-      const newStep = newQuestionsList.findIndex(q => q?.id === nextQuestionId);
-  
-      setStep(newStep);
-      const nextQuestion = newQuestionsList[newStep];
-      setSelectedAnswer(updatedAnswers[newStep] || (nextQuestion?.multiple ? [] : ""));
+    } catch (err) {
+      console.error("Error in handleNext:", err);
     }
   };  
 

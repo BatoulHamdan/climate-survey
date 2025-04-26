@@ -4,16 +4,16 @@ const Big5 = [
       question: {
         en: "I see myself as someone who is reserved.",
         ar: "أرى نفسي كشخص خجول.",
-        fa: "من خود را به عنوان فردی که کم حرف است می‌بینم.",
+        fa: "خودم را کسی می‌بینم که درون‌گرا و کم‌حرف است.",
         fr: "Je me considère comme une personne réservée.",
         it: "Mi vedo come una persona riservata."
       },
       options: [
-        { label: { en: "Disagree strongly", ar: "أختلف بشدة", fa: "کاملاً مخالفم", fr: "Pas du tout d'accord", it: "Fortemente in disaccordo" }, value: "disagree_strongly" },
-        { label: { en: "Disagree a little", ar: "أختلف قليلاً", fa: "مخالفم کمی", fr: "Pas tout à fait d'accord", it: "Non d'accordo" }, value: "disagree_a_little" },
-        { label: { en: "Neither agree nor disagree", ar: "لا أوافق ولا أعارض", fa: "نه موافقم نه مخالفم", fr: "Ni d'accord ni pas d'accord", it: "Né d'accord né in disaccordo" }, value: "neutral" },
-        { label: { en: "Agree a little", ar: "أوافق قليلاً", fa: "موافقم قليلاً", fr: "Plutôt d'accord", it: "D'accordo un po'" }, value: "agree_a_little" },
-        { label: { en: "Agree strongly", ar: "أوافق بشدة", fa: "موافقم بشدة", fr: "Tout à fait d'accord", it: "Fortemente d'accordo" }, value: "agree_strongly" }
+        { label: { en: "Disagree strongly", ar: "أختلف بشدة", fa: "کاملاً مخالف", fr: "Pas du tout d'accord", it: "Fortemente in disaccordo" }, value: "disagree_strongly" },
+        { label: { en: "Disagree a little", ar: "أختلف قليلاً", fa: "کمی مخالف", fr: "Pas tout à fait d'accord", it: "Non d'accordo" }, value: "disagree_a_little" },
+        { label: { en: "Neither agree nor disagree", ar: "لا أوافق ولا أعارض", fa: "نه موافقم نه مخالف", fr: "Ni d'accord ni pas d'accord", it: "Né d'accord né in disaccordo" }, value: "neutral" },
+        { label: { en: "Agree a little", ar: "أوافق قليلاً", fa: "کمی موافق", fr: "Plutôt d'accord", it: "D'accordo un po'" }, value: "agree_a_little" },
+        { label: { en: "Agree strongly", ar: "أوافق بشدة", fa: "کاملاً موافق", fr: "Tout à fait d'accord", it: "Fortemente d'accordo" }, value: "agree_strongly" }
       ]
     },
     {

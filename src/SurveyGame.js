@@ -204,48 +204,57 @@ function SurveyGame() {
         setLastInterest(newInterests);
       }
   
-      // --- Save answer
-      if (currentQuestion?.multiple && Array.isArray(selectedAnswer)) {
-        updatedAnswers[step] = selectedAnswer.join(", ");
-      } else {
-        updatedAnswers[step] = selectedAnswer;
+      // Save the current answer
+    if (currentQuestion?.multiple && Array.isArray(selectedAnswer)) {
+      updatedAnswers[step] = selectedAnswer.join(" ");
+    } else {
+      updatedAnswers[step] = selectedAnswer;
+    }
+  
+    setAnswers(updatedAnswers);
+    setQuestionsList(newQuestionsList);
+  
+    // Final step
+    if (step >= newQuestionsList.length - 1) {
+      setSurveyCompleted(true);
+      const userId = sessionStorage.getItem("userId");
+  
+      const structuredAnswers = Array.from({ length: 93 }, (_, id) => {
+        const index = newQuestionsList.findIndex(q => q?.id === id);
+        return {
+          questionId: id.toString(),
+          answer: index !== -1 && updatedAnswers[index] ? updatedAnswers[index] : "N/A",
+        };
+      });
+  
+      try {
+        const response = await fetch("https://climate-survey-backend.onrender.com/api/surveys", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userId,
+            answers: structuredAnswers,
+          }),
+        });
+  
+        const result = await response.json();
+        sessionStorage.setItem("userCode", result.userCode);
+        setUserCode(result.userCode);
+      } catch (error) {
+        console.error("Error submitting survey:", error);
       }
+    } else {
+      const nextQuestionId = newQuestionsList[step + 1]?.id;
+      const newStep = newQuestionsList.findIndex(q => q?.id === nextQuestionId);
   
-      setAnswers(updatedAnswers);
-      setQuestionsList(newQuestionsList);
-  
-      // --- Final Step Check
-      if (step >= newQuestionsList.length - 1) {
-        setSurveyCompleted(true);
-  
-        const userId = sessionStorage.getItem("userId");
-  
-        const structuredAnswers = newQuestionsList.map((q, index) => ({
-          questionId: q?.id?.toString() ?? index.toString(),
-          answer: updatedAnswers[index] || "N/A",
-        }));
-  
-        try {
-          const response = await fetch("https://climate-survey-backend.onrender.com/api/surveys", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ userId, answers: structuredAnswers }),
-          });
-  
-          const result = await response.json();
-          sessionStorage.setItem("userCode", result.userCode);
-          setUserCode(result.userCode);
-        } catch (error) {
-          console.error("Error submitting survey:", error);
-        }
-      } else {
-        const nextStep = step + 1;
-        const nextQuestion = newQuestionsList[nextStep];
-        setStep(nextStep);
-        setSelectedAnswer(updatedAnswers[nextStep] || (nextQuestion?.multiple ? [] : ""));
-      }
+      setStep(newStep);
+      const nextQuestion = newQuestionsList[newStep];
+      setSelectedAnswer(updatedAnswers[newStep] || (nextQuestion?.multiple ? [] : ""));
+    }
     } catch (err) {
-      console.error("Error in handleNext:", err);
+        console.error("Error in handleNext:", err);
     }
   };  
 

@@ -21,6 +21,7 @@ function SurveyGame() {
   const [lastInterest, setLastInterest] = useState(null);
   const [otherQuestionsAdded, setOtherQuestionsAdded] = useState(false);
   const [userCode, setUserCode] = useState(""); 
+  const [consentGiven, setConsentGiven] = useState(false);
 
   // Dynamically import language-specific questions
   useEffect(() => {
@@ -300,14 +301,29 @@ function SurveyGame() {
       {!hasStarted && (
         <div className="text-center mt-10">
           <LanguageSelector language={language} handleLanguageChange={handleLanguageChange} />
-  
-          <h3> {t("welcomeMessage")} </h3>
+
+          <h3>{t("welcomeMessage")}</h3>
           <p className="text-xl font-medium mb-6">
             {t("surveyIntro")}
           </p>
+          
+          <div className="flex items-center justify-center mb-6">
+            <input
+              type="checkbox"
+              id="consent"
+              checked={consentGiven}
+              onChange={() => setConsentGiven(!consentGiven)}
+              className="mr-2"
+            />
+            <label htmlFor="consent" className="text-sm">
+              {t("consentStatement")}
+            </label>
+          </div>
+
           <button
             onClick={handleStart}
-            className="start-button"
+            disabled={!consentGiven}
+            className={`start-button ${!consentGiven ? "disabled" : "enabled"}`}
           >
             {t("startButton")}
           </button>

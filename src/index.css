@@ -85,16 +85,16 @@ body {
   margin: 0 6px;
 }
 
-.action-button.enabled {
+.action-button.enabled, .start-button.enabled {
   background-color: #007bff;
   color: white;
 }
 
-.action-button.enabled:hover {
+.action-button.enabled:hover, .start-button.enabled:hover {
   background-color: #0056b3;
 }
 
-.action-button.disabled {
+.action-button.disabled, .start-button.disabled {
   background-color: #ccc;
   color: #666;
   cursor: not-allowed;

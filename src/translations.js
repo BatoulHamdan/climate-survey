@@ -27,6 +27,13 @@ const translations = {
       fa: "خوشحالیم که برای کمک به محیط زیست گام برداشته‌اید. برای پاداش دادن به صبر شما در پر کردن این نظرسنجی، تا پایان منتظر شگفتی خود باشید! 🎉",
       fr: "Nous sommes heureux que vous ayez choisi de faire votre part pour aider l'environnement. Pour vous récompenser de votre patience en remplissant ce sondage, attendez jusqu'à la fin pour votre surprise! 🎉",
     },
+    consentStatement: {
+      default: "I agree that my responses may be collected and used for research purposes.",
+      ar: "أوافق على جمع إجاباتي واستخدامها لأغراض البحث.",
+      it: "Accetto che le mie risposte possano essere raccolte e utilizzate per scopi di ricerca.",
+      fa: "موافقت می‌کنم که پاسخ‌های من برای اهداف تحقیقاتی جمع‌آوری و استفاده شوند.",
+      fr: "J'accepte que mes réponses soient collectées et utilisées à des fins de recherche.",
+    },
     startButton: {
       ar: "ابدأ الاستبيان",
       default: "Start Survey",
